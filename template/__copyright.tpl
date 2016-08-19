@@ -1,0 +1,1 @@
+{if $__translate->isActiveApplication()}<address class="copyright marginTop">{lang}translate.index.copyright{/lang}</address>{/if}
