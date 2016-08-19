@@ -1,6 +1,10 @@
 # de.mysterycode.translate
 Community-translation platform for WCF/WSC-apps
 
+Status
+-------------
+[![Build Status](https://travis-ci.org/MysteryCode/de.mysterycode.translate.svg?branch=master)](https://travis-ci.org/MysteryCode/de.mysterycode.translate) [![Code Climate](https://codeclimate.com/github/MysteryCode/de.mysterycode.translate/badges/gpa.svg)](https://codeclimate.com/github/MysteryCode/de.mysterycode.translate) 
+
 Required Packages
 -------------
 [com.woltlab.wcf](https://github.com/WoltLab/WCF) (3.0.0)
