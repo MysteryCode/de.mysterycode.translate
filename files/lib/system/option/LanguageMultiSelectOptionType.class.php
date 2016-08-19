@@ -1,9 +1,9 @@
 <?php
 
 namespace translate\system\option;
+use translate\data\language\LanguageList;
 use wcf\data\option\Option;
 use wcf\system\option\MultiSelectOptionType;
-use translate\data\language\LanguageList;
 
 class LanguageMultiSelectOptionType extends MultiSelectOptionType {
 	protected function getSelectOptions(Option $option) {
