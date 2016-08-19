@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/eventListener.xsd">
+	<import>
+		<!-- user rename -->
+		<eventlistener>
+			<environment>user</environment>
+			<eventclassname>wcf\data\user\UserAction</eventclassname>
+			<eventname>rename</eventname>
+			<listenerclassname>translate\system\event\listener\UserRenameListener</listenerclassname>
+		</eventlistener>
+		<eventlistener>
+			<environment>admin</environment>
+			<eventclassname>wcf\data\user\UserAction</eventclassname>
+			<eventname>rename</eventname>
+			<listenerclassname>translate\system\event\listener\UserRenameListener</listenerclassname>
+		</eventlistener>
+	</import>
+</data>
