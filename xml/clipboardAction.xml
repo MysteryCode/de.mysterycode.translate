@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/clipboardAction.xsd">
+	<import>
+		<action name="delete">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageClipboardAction]]></actionclassname>
+			<showorder>1</showorder>
+			<pages>
+				<page><![CDATA[translate\page\LanugageListPage]]></page>
+				<page><![CDATA[translate\acp\page\LanugageListPage]]></page>
+			</pages>
+		</action>
+		<action name="enable">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageClipboardAction]]></actionclassname>
+			<showorder>2</showorder>
+			<pages>
+				<page><![CDATA[translate\page\LanugageListPage]]></page>
+				<page><![CDATA[translate\acp\page\LanugageListPage]]></page>
+			</pages>
+		</action>
+		<action name="disable">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageClipboardAction]]></actionclassname>
+			<showorder>3</showorder>
+			<pages>
+				<page><![CDATA[translate\page\LanugageListPage]]></page>
+				<page><![CDATA[translate\acp\page\LanugageListPage]]></page>
+			</pages>
+		</action>
+		
+		<action name="delete">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageItemClipboardAction]]></actionclassname>
+			<showorder>1</showorder>
+			<pages>
+				<page><![CDATA[wcf\page\LanguageItemListPage]]></page>
+			</pages>
+		</action>
+		<action name="enable">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageItemClipboardAction]]></actionclassname>
+			<showorder>2</showorder>
+			<pages>
+				<page><![CDATA[wcf\page\LanguageItemListPage]]></page>
+			</pages>
+		</action>
+		<action name="disable">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageItemClipboardAction]]></actionclassname>
+			<showorder>3</showorder>
+			<pages>
+				<page><![CDATA[wcf\page\LanguageItemListPage]]></page>
+			</pages>
+		</action>
+		<action name="move">
+			<actionclassname><![CDATA[translate\system\clipboard\action\LanguageItemClipboardAction]]></actionclassname>
+			<showorder>4</showorder>
+			<pages>
+				<page><![CDATA[wcf\page\LanguageItemListPage]]></page>
+			</pages>
+		</action>
+		
+		<action name="delete">
+			<actionclassname><![CDATA[translate\system\clipboard\action\PackageClipboardAction]]></actionclassname>
+			<showorder>1</showorder>
+			<pages>
+				<page><![CDATA[translate\page\PackageListPage]]></page>
+				<page><![CDATA[translate\acp\page\PackageListPage]]></page>
+			</pages>
+		</action>
+		<action name="enable">
+			<actionclassname><![CDATA[translate\system\clipboard\action\PackageClipboardAction]]></actionclassname>
+			<showorder>2</showorder>
+			<pages>
+				<page><![CDATA[translate\page\PackageListPage]]></page>
+				<page><![CDATA[translate\acp\page\PackageListPage]]></page>
+			</pages>
+		</action>
+		<action name="disable">
+			<actionclassname><![CDATA[translate\system\clipboard\action\PackageClipboardAction]]></actionclassname>
+			<showorder>3</showorder>
+			<pages>
+				<page><![CDATA[translate\page\PackageListPage]]></page>
+				<page><![CDATA[translate\acp\page\PackageListPage]]></page>
+			</pages>
+		</action>
+	</import>
+</data>
