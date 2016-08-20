@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/aclOption.xsd">
+	<import>
+		<categories>
+			<category name="user.package">
+				<objecttype>de.mysterycode.translate.package</objecttype>
+			</category>
+			<category name="user.language">
+				<objecttype>de.mysterycode.translate.language</objecttype>
+			</category>
+		</categories>
+
+		<options>
+			<option name="canAddPackage">
+				<categoryname>user.package</categoryname>
+				<objecttype>de.mysterycode.translate.package</objecttype>
+			</option>
+			<option name="canEditPackage">
+				<categoryname>user.package</categoryname>
+				<objecttype>de.mysterycode.translate.package</objecttype>
+			</option>
+			<option name="canDeletePackage">
+				<categoryname>user.package</categoryname>
+				<objecttype>de.mysterycode.translate.package</objecttype>
+			</option>
+	
+			<option name="canAddLanguage">
+				<categoryname>user.language</categoryname>
+				<objecttype>de.mysterycode.translate.language</objecttype>
+			</option>
+		</options>
+	</import>
+</data>
