@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/acpMenu.xsd">
+	<import>
+		<acpmenuitem name="translate.acp.menu.link.translate" />
+
+		<acpmenuitem name="translate.acp.menu.link.language">
+			<parent>translate.acp.menu.link.translate</parent>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		<acpmenuitem name="translate.acp.menu.link.language.list">
+			<controller><![CDATA[translate\acp\page\LanguageListPage]]></controller>
+			<parent>translate.acp.menu.link.language</parent>
+			<permissions>admin.translate.language.canEdit,admin.translate.language.canDelete</permissions>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		<acpmenuitem name="translate.acp.menu.link.language.add">
+			<controller><![CDATA[translate\acp\form\LanguageAddForm]]></controller>
+			<parent>translate.acp.menu.link.language</parent>
+			<permissions>admin.translate.language.canAdd</permissions>
+			<showorder>2</showorder>
+		</acpmenuitem>
+
+		<acpmenuitem name="translate.acp.menu.link.package">
+			<parent>translate.acp.menu.link.translate</parent>
+			<showorder>2</showorder>
+		</acpmenuitem>
+		<acpmenuitem name="translate.acp.menu.link.package.list">
+			<controller><![CDATA[translate\acp\page\PackageListPage]]></controller>
+			<parent>translate.acp.menu.link.package</parent>
+			<permissions>admin.translate.package.canEdit,admin.translate.package.canDelete</permissions>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		<acpmenuitem name="translate.acp.menu.link.package.add">
+			<controller><![CDATA[translate\acp\form\PackageAddForm]]></controller>
+			<parent>translate.acp.menu.link.package</parent>
+			<permissions>admin.translate.package.canAdd</permissions>
+			<showorder>2</showorder>
+		</acpmenuitem>
+	</import>
+</data>
