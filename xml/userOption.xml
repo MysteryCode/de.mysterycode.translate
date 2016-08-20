@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/userOption.xsd">
+	<import>
+		<categories>
+			<category name="settings.translate">
+				<parent>settings</parent>
+			</category>
+			<category name="settings.translate.general">
+				<parent>settings.translate</parent>
+			</category>
+			<category name="settings.translate.moderation">
+				<parent>settings.translate</parent>
+			</category>
+			<category name="settings.translate.exclude">
+				<parent>settings.translate</parent>
+			</category>
+		</categories>
+
+		<options>
+			<option name="originLanguage">
+				<categoryname>settings.translate.general</categoryname>
+				<optiontype>languageselect</optiontype>
+				<defaultvalue>de</defaultvalue>
+				<editable>3</editable>
+				<options>translate_enable</options>
+			</option>
+			<option name="originLanguageSecondary">
+				<categoryname>settings.translate.general</categoryname>
+				<optiontype>languageselect</optiontype>
+				<defaultvalue></defaultvalue>
+				<editable>3</editable>
+				<options>translate_enable</options>
+			</option>
+
+			<option name="translateModeration">
+				<categoryname>settings.translate.moderation</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<editable>3</editable>
+				<options>translate_enable</options>
+			</option>
+
+			<option name="translateExcludedLanguages">
+				<categoryname>settings.translate.exclude</categoryname>
+				<optiontype>languagemultiselect</optiontype>
+				<defaultvalue></defaultvalue>
+				<editable>3</editable>
+				<options>translate_enable</options>
+			</option>
+		</options>
+	</import>
+</data>
