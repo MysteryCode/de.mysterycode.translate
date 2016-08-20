@@ -1,0 +1,1 @@
+{if $__translate->isActiveApplication()}<img src="{@$__wcf->getPath('translate')}images/translateLogo.png" alt="" style="height: 80px; width: 394px;" />{/if}
