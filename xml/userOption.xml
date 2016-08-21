@@ -19,14 +19,14 @@
 		<options>
 			<option name="originLanguage">
 				<categoryname>settings.translate.general</categoryname>
-				<optiontype>languageselect</optiontype>
+				<optiontype>languageSelect</optiontype>
 				<defaultvalue>de</defaultvalue>
 				<editable>3</editable>
 				<options>translate_enable</options>
 			</option>
 			<option name="originLanguageSecondary">
 				<categoryname>settings.translate.general</categoryname>
-				<optiontype>languageselect</optiontype>
+				<optiontype>languageSelect</optiontype>
 				<defaultvalue></defaultvalue>
 				<editable>3</editable>
 				<options>translate_enable</options>
@@ -42,7 +42,7 @@
 
 			<option name="translateExcludedLanguages">
 				<categoryname>settings.translate.exclude</categoryname>
-				<optiontype>languagemultiselect</optiontype>
+				<optiontype>languageMultiSelect</optiontype>
 				<defaultvalue></defaultvalue>
 				<editable>3</editable>
 				<options>translate_enable</options>
