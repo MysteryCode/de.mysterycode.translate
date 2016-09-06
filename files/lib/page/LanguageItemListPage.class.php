@@ -4,6 +4,7 @@ namespace translate\page;
 use translate\data\language\item\LanguageItemList;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
+use translate\data\language\LanguageCache;
 
 class LanguageItemListPage extends SortablePage {
 	/**
@@ -28,5 +29,13 @@ class LanguageItemListPage extends SortablePage {
 		parent::initObjectList();
 		
 		$this->objectList->sqlOrderBy .= ' GROUP BY language_item.languageItem';
+	}
+	
+	public function assignVariables() {
+		parent::assignVariables();
+		
+		WCF::getTPL()->assign([
+			'availableLanguages' => LanguageCache::getInstance()->getLanguages()
+		]);
 	}
 }
