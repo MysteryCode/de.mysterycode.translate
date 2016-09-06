@@ -16,12 +16,12 @@ class Package extends DatabaseObject {
 	public function getCurrentVersion() {
 		if ($this->currentVersion === null) {
 			$versionList = new PackageVersionList();
-			$versionList->getConditionBuilder()->add('version.packageID = ?', [ $this->packageID ]);
-			$versionList->sqlOrderBy = 'version.time DESC';
+			$versionList->getConditionBuilder()->add('package_version.packageID = ?', [ $this->packageID ]);
+			$versionList->sqlOrderBy = 'package_version.time DESC';
 			$versionList->readObjects();
 			
 			foreach ($versionList as $version) {
-				if (WCFPackage::compareVersion($this->currentVersion->version, $version->version, '<'))
+				if ($this->currentVersion === null || WCFPackage::compareVersion($this->currentVersion->version, $version->version, '<'))
 					$this->currentVersion = $version;
 			}
 		}
