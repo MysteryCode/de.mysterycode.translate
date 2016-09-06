@@ -10,6 +10,7 @@ CREATE TABLE translate1_package (
 	author						VARCHAR(255)	NOT NULL,
 	authorUrl					VARCHAR(255)	NOT NULL,
 	supportUrl					VARCHAR(255)	NOT NULL,
+	github						VARCHAR(255),
 	PRIMARY KEY (packageID),
 	KEY (identifier)
 );
