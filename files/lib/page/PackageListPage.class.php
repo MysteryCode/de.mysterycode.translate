@@ -14,7 +14,7 @@ class PackageListPage extends SortablePage {
 	/**
 	 * @see \wcf\page\SortablePage::$validSortFields
 	 */
-	public $validSortFields = ['title', 'identifier', 'author', 'variables', 'checkedVariables'];
+	public $validSortFields = ['packageID', 'title', 'identifier', 'author', 'variables', 'checkedVariables'];
 	
 	/**
 	 * @see \wcf\page\MultipleLinkPage::$objectListClassname
