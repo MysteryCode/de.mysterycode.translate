@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/page.xsd">
+	<import>
+		<page identifier="de.mysterycode.translate.LanguageList">
+			<pageType>system</pageType>
+			<controller>translate\page\LanguageListPage</controller>
+			<name language="de">Sprachen</name>
+			<name language="de-informal">Sprachen</name>
+			<name language="en">Languages</name>
+			<options>translate_enable</options>
+			
+			<content language="en">
+				<title>Languages</title>
+			</content>
+			<content language="de">
+				<title>Sprachen</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprachen</title>
+			</content>
+		</page>
+		<page identifier="de.mysterycode.translate.FullLanguageList">
+			<pageType>system</pageType>
+			<controller>translate\page\FullLanguageListPage</controller>
+			<name language="de">Alle Sprachen</name>
+			<name language="de-informal">Alle Sprachen</name>
+			<name language="en">Alle Languages</name>
+			<options>translate_enable</options>
+			
+			<content language="en">
+				<title>Languages</title>
+			</content>
+			<content language="de">
+				<title>Sprachen</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprachen</title>
+			</content>
+		</page>
+		<page identifier="de.mysterycode.translate.LanguageAdd">
+			<pageType>system</pageType>
+			<controller>translate\form\LanguageAddForm</controller>
+			<name language="de">Sprache hinzufügen</name>
+			<name language="de-informal">Sprache hinzufügen</name>
+			<name language="en">Add Language</name>
+			<options>translate_enable</options>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.LanguageList</parent>
+			
+			<content language="en">
+				<title>Add Language</title>
+			</content>
+			<content language="de">
+				<title>Sprache hinzufügen</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprache hinzufügen</title>
+			</content>
+		</page>
+		
+		<page identifier="de.mysterycode.translate.PackageList">
+			<pageType>system</pageType>
+			<controller>translate\page\PackageListPage</controller>
+			<name language="de">Pakete</name>
+			<name language="de-informal">Pakete</name>
+			<name language="en">Packages</name>
+			<options>translate_enable</options>
+			
+			<content language="en">
+				<title>Packages</title>
+			</content>
+			<content language="de">
+				<title>Pakete</title>
+			</content>
+			<content language="de-informal">
+				<title>Pakete</title>
+			</content>
+		</page>
+		<page identifier="de.mysterycode.translate.PackageAdd">
+			<pageType>system</pageType>
+			<controller>translate\form\PackageAddForm</controller>
+			<name language="de">Paket hinzufügen</name>
+			<name language="de-informal">Paket hinzufügen</name>
+			<name language="en">Add Package</name>
+			<options>translate_enable</options>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.PackageList</parent>
+			
+			<content language="en">
+				<title>Add Package</title>
+			</content>
+			<content language="de">
+				<title>Paket hinzufügen</title>
+			</content>
+			<content language="de-informal">
+				<title>Paket hinzufügen</title>
+			</content>
+		</page>
+		
+		<page identifier="de.mysterycode.translate.LanguageItemList">
+			<pageType>system</pageType>
+			<controller>translate\page\LanguageItemListPage</controller>
+			<name language="de">Sprachvariablen</name>
+			<name language="de-informal">Sprachvariablen</name>
+			<name language="en">Language Items</name>
+			<options>translate_enable</options>
+			
+			<content language="en">
+				<title>Language Items</title>
+			</content>
+			<content language="de">
+				<title>Sprachvariablen</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprachvariablen</title>
+			</content>
+		</page>
+		<page identifier="de.mysterycode.translate.LanguageItemAdd">
+			<pageType>system</pageType>
+			<controller>translate\form\LanguageItemAddForm</controller>
+			<name language="de">Sprachvariable hinzufügen</name>
+			<name language="de-informal">Sprachvariable hinzufügen</name>
+			<name language="en">Add Language Item</name>
+			<options>translate_enable</options>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.LanguageItemList</parent>
+			
+			<content language="en">
+				<title>Add Language Item</title>
+			</content>
+			<content language="de">
+				<title>Sprachvariable hinzufügen</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprachvariable hinzufügen</title>
+			</content>
+		</page>
+		
+		
+		<page identifier="de.mysterycode.translate.LanguageItem">
+			<pageType>system</pageType>
+			<controller>translate\page\LanguageItemPage</controller>
+			<handler>wcf\system\page\handler\LanguageItemPageHandler</handler>
+			<name language="de">Sprachvariable</name>
+			<name language="de-informal">Sprachvariable</name>
+			<name language="en">Language Item</name>
+			<options>translate_enable</options>
+			<requireObjectID>1</requireObjectID>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.LanguageItemList</parent>
+		</page>
+		<page identifier="de.mysterycode.translate.Language">
+			<pageType>system</pageType>
+			<controller>translate\page\LanguagePage</controller>
+			<handler>wcf\system\page\handler\LanguagePageHandler</handler>
+			<name language="de">Sprache</name>
+			<name language="de-informal">Sprache</name>
+			<name language="en">Language</name>
+			<options>translate_enable</options>
+			<requireObjectID>1</requireObjectID>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.LanguageList</parent>
+		</page>
+		<page identifier="de.mysterycode.translate.Package">
+			<pageType>system</pageType>
+			<controller>translate\page\PackagePage</controller>
+			<handler>translate\system\page\handler\PackagePageHandler</handler>
+			<name language="de">Paket</name>
+			<name language="de-informal">Paket</name>
+			<name language="en">Package</name>
+			<options>translate_enable</options>
+			<requireObjectID>1</requireObjectID>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.PackageList</parent>
+		</page>
+		<page identifier="de.mysterycode.translate.LanguageItemCheck">
+			<pageType>system</pageType>
+			<controller>translate\page\LanguageItemCheckPage</controller>
+			<name language="de">Sprachvariablenprüfung</name>
+			<name language="de-informal">Sprachvariablenprüfung</name>
+			<name language="en">Language Items Check</name>
+			<options>translate_enable</options>
+			<hasFixedParent>1</hasFixedParent>
+			
+			<content language="en">
+				<title>Language Items Check</title>
+			</content>
+			<content language="de">
+				<title>Sprachvariablenprüfung</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprachvariablenprüfung</title>
+			</content>
+		</page>
+	</import>
+</data>
