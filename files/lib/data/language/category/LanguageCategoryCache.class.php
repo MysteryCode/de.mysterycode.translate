@@ -1,6 +1,6 @@
 <?php
 
-namespace translate\data\language;
+namespace translate\data\language\category;
 use translate\system\cache\builder\LanguageCategoryCacheBuilder;
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
