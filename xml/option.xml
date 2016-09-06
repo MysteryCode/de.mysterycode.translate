@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/option.xsd">
+	<import>
+		<categories>
+			<category name="translate" />
+
+			<category name="translate.general">
+				<parent>translate</parent>
+			</category>
+
+			<category name="translate.git">
+				<parent>translate</parent>
+			</category>
+
+			<category name="translate.package">
+				<parent>translate</parent>
+			</category>
+			<category name="translate.package.sort">
+				<parent>translate.package</parent>
+			</category>
+		</categories>
+		<options>
+			<option name="translate_enable">
+				<categoryname>module.community</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+
+			<option name="translate_comment_enable">
+				<categoryname>translate.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="translate_safeafterchecks">
+				<categoryname>translate.general</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>2</defaultvalue>
+			</option>
+
+			<option name="translate_github_access_token">
+				<categoryname>translate.general</categoryname>
+				<optiontype>text</optiontype>
+				<defaultvalue></defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>
