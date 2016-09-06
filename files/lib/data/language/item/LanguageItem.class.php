@@ -11,6 +11,11 @@ class LanguageItem extends DatabaseObject {
 	 */
 	protected static $databaseTableIndexName = 'languageItemID';
 	
+	/**
+	 * array with value/translation objects
+	 * 
+	 * @var \translate\data\language\item\value\LanguageItemValue[]
+	 */
 	protected $translations = [];
 	
 	/**
