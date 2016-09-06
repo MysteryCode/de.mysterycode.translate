@@ -1,6 +1,7 @@
 <?php
 
 namespace translate\page;
+use translate\data\package\PackageList;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
 
@@ -18,5 +19,5 @@ class PackageListPage extends SortablePage {
 	/**
 	 * @see \wcf\page\MultipleLinkPage::$objectListClassname
 	 */
-	public $objectListClassName = 'translate\\data\\package\\PackageList';
+	public $objectListClassName = PackageList::class;
 }
