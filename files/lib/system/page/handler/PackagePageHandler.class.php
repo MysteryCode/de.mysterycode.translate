@@ -5,6 +5,9 @@ use translate\data\package\Package;
 use translate\system\cache\runtime\PackageRuntimeCache;
 use wcf\data\page\Page;
 use wcf\data\user\online\UserOnline;
+use wcf\system\page\handler\AbstractMenuPageHandler;
+use wcf\system\page\handler\IOnlineLocationPageHandler;
+use wcf\system\page\handler\TOnlineLocationPageHandler;
 use wcf\system\WCF;
 
 class PackagePageHandler extends AbstractMenuPageHandler implements IOnlineLocationPageHandler {
