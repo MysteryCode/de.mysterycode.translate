@@ -10,7 +10,8 @@ CREATE TABLE translate1_package (
 	author						VARCHAR(255)	NOT NULL,
 	authorUrl					VARCHAR(255)	NOT NULL,
 	supportUrl					VARCHAR(255)	NOT NULL,
-	PRIMARY KEY (packageID)
+	PRIMARY KEY (packageID),
+	KEY (identifier)
 );
 
 DROP TABLE IF EXISTS translate1_package_version;
@@ -31,9 +32,10 @@ CREATE TABLE translate1_package_version (
 	active						TINYINT(1)		NOT NULL	DEFAULT 0,
 	filename					VARCHAR(255)	NOT NULL	DEFAULT '',
 	filesize					VARCHAR(255)	NOT NULL	DEFAULT '',
-	tmpHash						VARCHAR(40)		NOT NULL	DEFAULT '',
+	tmpHash						CHAR(40)		NOT NULL	DEFAULT '',
 	mimeType					VARCHAR(255)	NOT NULL	DEFAULT '',
-	PRIMARY KEY (versionID)
+	PRIMARY KEY (versionID),
+	KEY (packageID)
 );
 
 DROP TABLE IF EXISTS translate1_language;
@@ -64,7 +66,7 @@ CREATE TABLE translate1_language_item (
 	checked						TINYINT(1)		NOT NULL	DEFAULT 0,
 	checkedByUserIDs			MEDIUMTEXT,
 	packageID					INT(10),
-	UNIQUE KEY languageItem (languageItem, languageID)
+	UNIQUE KEY languageItem (languageID, languageItem)
 );
 
 
@@ -73,3 +75,4 @@ ALTER TABLE translate1_package_version ADD FOREIGN KEY (userID) REFERENCES wcf1_
 
 ALTER TABLE translate1_language_item ADD FOREIGN KEY (languageID) REFERENCES translate1_language (languageID) ON DELETE CASCADE;
 ALTER TABLE translate1_language_item ADD FOREIGN KEY (languageCategoryID) REFERENCES translate1_language_category (languageCategoryID) ON DELETE CASCADE;
+ALTER TABLE translate1_language_item ADD FOREIGN KEY (packageID) REFERENCES translate1_package (packageID) ON DELETE SET NULL;
