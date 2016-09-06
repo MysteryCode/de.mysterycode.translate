@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/menuItem.xsd">
+	<import>
+		<item identifier="de.mysterycode.translate.LanguageList">
+			<menu>com.woltlab.wcf.MainMenu</menu>
+			<page>de.mysterycode.translate.LanguageList</page>
+			<title language="de">Sprachen</title>
+			<title language="de-informal">Sprachen</title>
+			<title language="en">Languages</title>
+		</item>
+		<item identifier="de.mysterycode.translate.FullLanguageList">
+			<parent>de.mysterycode.translate.LanguageList</parent>
+			<page>de.mysterycode.translate.FullLanguageList</page>
+			<title language="de">Alle Sprachen</title>
+			<title language="de-informal">Alle Sprachen</title>
+			<title language="en">All Languages</title>
+		</item>
+		<item identifier="de.mysterycode.translate.PackageList">
+			<menu>com.woltlab.wcf.MainMenu</menu>
+			<page>de.mysterycode.translate.PackageList</page>
+			<title language="de">Pakete</title>
+			<title language="de-informal">Pakete</title>
+			<title language="en">Packages</title>
+		</item>
+		<item identifier="de.mysterycode.translate.LanguageItemList">
+			<menu>com.woltlab.wcf.MainMenu</menu>
+			<page>de.mysterycode.translate.LanguageItemList</page>
+			<title language="de">Sprachvariablen</title>
+			<title language="de-informal">Sprachvariablen</title>
+			<title language="en">Language Items</title>
+		</item>
+		<item identifier="de.mysterycode.translate.LanguageItemCheck">
+			<menu>com.woltlab.wcf.MainMenu</menu>
+			<page>de.mysterycode.translate.LanguageItemCheck</page>
+			<title language="de">Sprachvariablenprüfung</title>
+			<title language="de-informal">Sprachvariablenprüfung</title>
+			<title language="en">Language Items Check</title>
+		</item>
+	</import>
+</data>
