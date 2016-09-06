@@ -52,7 +52,7 @@
 						</td>
 						
 						{foreach from=$languageItem->getTranslationStatus() item=$status}
-							<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else}{if $status == 0}refresh{else}check{/if}{/if}"></span></td>
+							<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{/if}"></span></td>
 						{/foreach}
 						
 						{event name='columns'}
