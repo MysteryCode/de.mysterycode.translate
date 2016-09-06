@@ -21,7 +21,7 @@
 {/hascontent}
 
 {if $items}
-	<div id="userTableContainer" class="section tabularBox">
+	<div class="section tabularBox">
 		<table class="table">
 			<thead>
 				<tr>
