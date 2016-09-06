@@ -4,6 +4,7 @@ namespace translate\data\package;
 use translate\data\package\version\PackageVersionList;
 use wcf\data\DatabaseObject;
 use wcf\data\package\Package as WCFPackage;
+use wcf\system\WCF;
 
 class Package extends DatabaseObject {
 	protected $currentVersion = null;
