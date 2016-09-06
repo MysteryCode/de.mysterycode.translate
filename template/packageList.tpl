@@ -27,7 +27,7 @@
 				<tr>
 					<th class="columnID columnPackageID{if $sortField == 'packageID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='PackageList' application='translate'}pageNo={@$pageNo}&sortField=packageID&sortOrder={if $sortField == 'packageID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.objectID{/lang}</a></th>
 					<th class="columnTitle columnPackageName{if $sortField == 'packageName'} active {@$sortOrder}{/if}"><a href="{link controller='PackageList' application='translate'}pageNo={@$pageNo}&sortField=packageName&sortOrder={if $sortField == 'packageName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.name{/lang}</a></th>
-					<th class="columnText columnPackageVersion">{lang}translate.package.version{/lang}</th>
+					<th class="columnText columnPackageVersion">{lang}translate.package.version.number{/lang}</th>
 					<th class="columnDigits columnVariables{if $sortField == 'variables'} active {@$sortOrder}{/if}"><a href="{link controller='PackageList' application='translate'}pageNo={@$pageNo}&sortField=variables&sortOrder={if $sortField == 'variables' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}translate.language.variables{/lang}</a></th>
 					<th class="columnDigits columnCheckedVariables{if $sortField == 'checkedVariables'} active {@$sortOrder}{/if}"><a href="{link controller='PackageList' application='translate'}pageNo={@$pageNo}&sortField=checkedVariables&sortOrder={if $sortField == 'checkedVariables' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}translate.language.variables.checked{/lang}</a></th>
 					

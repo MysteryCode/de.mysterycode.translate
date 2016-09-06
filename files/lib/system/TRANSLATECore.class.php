@@ -13,5 +13,5 @@ class TRANSLATECore extends AbstractApplication {
 	/**
 	 * @see \wcf\system\application\AbstractApplication::$primaryController
 	 */
-	protected $primaryController = translate\page\LanguageItemListPage::class;
+	protected $primaryController = LanguageItemListPage::class;
 }
