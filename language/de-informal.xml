@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com  https://mysterycode.de/XSD/language.xsd" languagecode="de-informal">
+	<category name="translate.index">
+		<item name="translate.index.copyright"><![CDATA[<a href="http://www.mysterycode.de/"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}><strong>Community Translation Center{if SHOW_VERSION_NUMBER} {$__translate->getPackage()->packageVersion}{/if}</strong>, ein Projekt von <strong>MysteryCode</strong></a>]]></item>
+	</category>
+	<category name="translate.package">
+		<item name="translate.package.language.export"><![CDATA[Sprachdateien dieses Pakets exportieren]]></item>
+	</category>
+	<category name="translate.package.version">
+		<item name="translate.package.version.number"><![CDATA[Versionsnummer]]></item>
+	</category>
+	<category name="translate.language">
+		<item name="translate.language.variables"><![CDATA[Variablen]]></item>
+		<item name="translate.language.variables.checked"><![CDATA[Überprüfte Variablen]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.translate"><![CDATA[Community Translation Center]]></item>
+		<item name="wcf.acp.option.category.translate.general"><![CDATA[Allgemein]]></item>
+		<item name="wcf.acp.option.translate_comment_enable"><![CDATA[Kommentare bei Übersetzungen aktivieren]]></item>
+		<item name="wcf.acp.option.translate_safeafterchecks"><![CDATA[Check-Hürde für Export]]></item>
+	</category>
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.category.settings.translate"><![CDATA[Community Translation Center]]></item>
+		<item name="wcf.user.option.category.settings.translate.general"><![CDATA[Allgemein]]></item>
+		<item name="wcf.user.option.originLanguage"><![CDATA[Quellsprache für Übersetzungen]]></item>
+		<item name="wcf.user.option.originLanguageSecondary"><![CDATA[Quellsprache Alternative]]></item>
+		<item name="wcf.user.option.category.settings.translate.moderation"><![CDATA[Moderation]]></item>
+		<item name="wcf.user.option.translateModeration"><![CDATA[An der Überprüfung von Übersetzungen teilnehmen]]></item>
+		<item name="wcf.user.option.category.settings.translate.exclude"><![CDATA[Sprachen ausschließen]]></item>
+		<item name="wcf.user.option.translateExcludedLanguages"><![CDATA[Nicht gesprochene Sprachen]]></item>
+	</category>
+</language>
