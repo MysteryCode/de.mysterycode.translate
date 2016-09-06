@@ -2,9 +2,9 @@
 
 namespace translate\page;
 use translate\data\language\item\LanguageItemList;
+use translate\data\language\LanguageCache;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
-use translate\data\language\LanguageCache;
 
 class LanguageItemListPage extends SortablePage {
 	/**
