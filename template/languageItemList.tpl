@@ -29,7 +29,7 @@
 					<th class="columnTitle columnLanguageItemName{if $sortField == 'languageItemName'} active {@$sortOrder}{/if}"><a href="{link controller='LanguageItemList' application='translate'}pageNo={@$pageNo}&sortField=languageItemName&sortOrder={if $sortField == 'languageItemName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.name{/lang}</a></th>
 					
 					{foreach from=$availableLanguages item=language}
-						<th class="columnIcon columnStatus">{$language->getIconTag()}</th>
+						<th class="columnIcon columnStatus">{@$language->getIconTag()}</th>
 					{/foreach}
 					
 					{event name='columnHeads'}
