@@ -1,6 +1,6 @@
 <?php
 
-namespace wcf\system\page\handler;
+namespace translate\system\page\handler;
 use translate\data\package\Package;
 use translate\system\cache\runtime\PackageRuntimeCache;
 use wcf\data\page\Page;
