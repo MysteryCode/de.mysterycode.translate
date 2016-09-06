@@ -16,7 +16,7 @@ class LanguageCategoryCacheBuilder extends AbstractCacheBuilder {
 		
 		// get all categories
 		$languageCategoryList = new LanguageCategoryList();
-		$languageCategoryList->sqlOrderBy = 'languageCategory.languageCategoryID ASC';
+		$languageCategoryList->sqlOrderBy = 'language_category.languageCategoryID ASC';
 		$languageCategoryList->readObjects();
 		$data['categories'] = $languageCategoryList->getObjects();
 		
