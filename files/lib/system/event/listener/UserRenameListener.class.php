@@ -19,6 +19,10 @@ class UserRenameListener implements IParameterizedEventListener {
 		$sql[] = "UPDATE		translate" . WCF_N . "_package_version
 			SET		username = ?
 			WHERE		userID = ?";
+		// item checks
+		$sql[] = "UPDATE		translate" . WCF_N . "_language_item_check
+			SET		username = ?
+			WHERE		userID = ?";
 		
 		foreach ($sql as $query) {
 			$statement = WCF::getDB()->prepareStatement($query);
