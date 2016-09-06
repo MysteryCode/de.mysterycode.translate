@@ -3,7 +3,7 @@
 namespace translate\data\package;
 use translate\data\package\version\PackageVersionList;
 use wcf\data\DatabaseObject;
-use wcf\data\package\Package;
+use wcf\data\package\Package as WCFPackage;
 
 class Package extends DatabaseObject {
 	protected $currentVersion = null;
@@ -20,7 +20,7 @@ class Package extends DatabaseObject {
 			$versionList->readObjects();
 			
 			foreach ($versionList as $version) {
-				if (Package::compareVersion($this->currentVersion->version, $version->version, '<'))
+				if (WCFPackage::compareVersion($this->currentVersion->version, $version->version, '<'))
 					$this->currentVersion = $version;
 			}
 		}
