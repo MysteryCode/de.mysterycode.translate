@@ -1,8 +1,8 @@
 <?php
 
 namespace translate\data\package;
-use wcf\data\DatabaseObject;
 use translate\data\package\version\PackageVersionList;
+use wcf\data\DatabaseObject;
 use wcf\data\package\Package;
 
 class Package extends DatabaseObject {
