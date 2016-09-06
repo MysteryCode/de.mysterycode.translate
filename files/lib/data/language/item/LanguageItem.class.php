@@ -40,15 +40,17 @@ class LanguageItem extends DatabaseObject {
 	 */
 	public function getTranslationStatus($languageID = 0) {
 		if ($languageID) {
-			if (!$this->checked) {
-				if ($this->translations === null)
-					$this->getTranslations();
-				if(empty($this->translations[$languageID]))
-					return -1;
-				else
-					return 0;
+			
+			if ($this->translations === null)
+				$this->getTranslations();
+			
+			if(empty($this->translations[$languageID])) {
+				return -1;
 			} else {
-				return 1;
+				if (!$this->translations[$languageID]->checked)
+					return 0;
+				else
+					return 1;
 			}
 		} else {
 			$languages = LanguageCache::getInstance()->getLanguages();
