@@ -39,7 +39,7 @@
 				{foreach from=$objects item=package}
 					<tr class="jsPackageRow">
 						<td class="columnIcon">
-							<a href="{link controller='PackageExport' application='translate' id=$package->packageID}{/link}" title="{lang}wcf.acp.package.export{/lang}" class="jsTooltip"><span class="icon icon16 fa-download"></span></a>
+							<a href="{link controller='PackageExport' application='translate' id=$package->packageID}{/link}" title="{lang}translate.package.language.export{/lang}" class="jsTooltip"><span class="icon icon16 fa-download"></span></a>
 							<a href="{link controller='PackageEdit' application='translate' id=$package->packageID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>
 							
 							{event name='rowButtons'}
@@ -47,6 +47,7 @@
 						<td class="columnID columnPackageID">{@$package->packageID}</td>
 						<td class="columnTitle columnPackageName">
 							<a href="{link controller='PackageItemList' application='translate' id=$package->packageID}{/link}">{$package->getTitle()}</a>
+							<br>
 							<small>
 								{if $package->authorUrl}
 									<a href="{$package->authorUrl}">{$package->author}</a>
@@ -55,7 +56,7 @@
 								{/if}
 							</small>
 						</td>
-						<td class="columnText columnPackageVersion">{$package->getCurrentVersion()}</td>
+						<td class="columnText columnPackageVersion">{$package->getCurrentVersion()->version}</td>
 						<td class="columnDigits columnVariables">{#$package->variables}</td>
 						<td class="columnDigits columnCustomVariables">{#$package->variables}</td>
 						
