@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/objectType.xsd">
+	<import>
+		<!-- acl -->
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.acl.simple</definitionname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.acl.simple</definitionname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.acl</definitionname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.acl</definitionname>
+		</type>
+		
+		<!-- notifications -->
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.notification.objectType</definitionname>
+			<classname>translate\system\user\notification\object\type\PackageUserNotificationObjectType</classname>
+			<category>de.mysterycode.translate.package</category>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.notification.objectType</definitionname>
+			<classname>translate\system\user\notification\object\type\LanguageUserNotificationObjectType</classname>
+			<category>de.mysterycode.translate.language</category>
+		</type>
+		
+		<!-- object watch -->
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.user.objectWatch</definitionname>
+			<classname>translate\system\user\object\watch\PackageUserObjectWatch</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.user.objectWatch</definitionname>
+			<classname>translate\system\user\object\watch\LanguageUserObjectWatch</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language.item</name>
+			<definitionname>com.woltlab.wcf.user.objectWatch</definitionname>
+			<classname>translate\system\user\object\watch\LanguageItemUserObjectWatch</classname>
+		</type>
+		
+		<!-- Visit Tracker -->
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.visitTracker.objectType</definitionname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.visitTracker.objectType</definitionname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language.item</name>
+			<definitionname>com.woltlab.wcf.visitTracker.objectType</definitionname>
+		</type>
+		
+		<!-- clipboard -->
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.clipboardItem</definitionname>
+			<listclassname>translate\data\language\LanguageList</listclassname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language.item</name>
+			<definitionname>com.woltlab.wcf.clipboardItem</definitionname>
+			<listclassname>translate\data\language\item\LanguageItemList</listclassname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.clipboardItem</definitionname>
+			<listclassname>translate\data\package\PackageList</listclassname>
+		</type>
+		
+		<!-- search -->
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.searchableObjectType</definitionname>
+			<classname>translate\system\search\PackageSearch</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.searchableObjectType</definitionname>
+			<classname>translate\system\search\LanguageSearch</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language.item</name>
+			<definitionname>com.woltlab.wcf.searchableObjectType</definitionname>
+			<classname>translate\system\search\LanguageItemSearch</classname>
+		</type>
+		
+		<!-- rebuild data workers -->
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.rebuildData</definitionname>
+			<classname><![CDATA[translate\system\worker\LanguageRebuildDataWorker]]></classname>
+			<nicevalue>500</nicevalue>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.rebuildData</definitionname>
+			<classname><![CDATA[translate\system\worker\PackageRebuildDataWorker]]></classname>
+			<nicevalue>510</nicevalue>
+		</type>
+		
+		<!-- recent activity -->
+		<type>
+			<name>de.mysterycode.translate.language</name>
+			<definitionname>com.woltlab.wcf.user.recentActivityEvent</definitionname>
+			<classname>translate\system\user\activity\event\LanguageUserActivityEvent</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.language.item</name>
+			<definitionname>com.woltlab.wcf.user.recentActivityEvent</definitionname>
+			<classname>translate\system\user\activity\event\LanguageItemUserActivityEvent</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.package</name>
+			<definitionname>com.woltlab.wcf.user.recentActivityEvent</definitionname>
+			<classname>translate\system\user\activity\event\PackageUserActivityEvent</classname>
+		</type>
+		<type>
+			<name>de.mysterycode.translate.package.version</name>
+			<definitionname>com.woltlab.wcf.user.recentActivityEvent</definitionname>
+			<classname>translate\system\user\activity\event\PackageVersionUserActivityEvent</classname>
+		</type>
+	</import>
+</data>
