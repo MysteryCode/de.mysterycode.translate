@@ -16,7 +16,7 @@ class PackageVersionCacheBuilder extends AbstractCacheBuilder {
 		
 		// get all versions
 		$versionList = new PackageVersionList();
-		$versionList->sqlOrderBy = 'version.versionID ASC';
+		$versionList->sqlOrderBy = 'package_version.versionID ASC';
 		$versionList->readObjects();
 		$data['versions'] = $versionList->getObjects();
 		

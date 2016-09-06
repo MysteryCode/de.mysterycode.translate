@@ -16,7 +16,7 @@ class LanguageItemCacheBuilder extends AbstractCacheBuilder {
 		
 		// get all items
 		$languageItemList = new LanguageItemList();
-		$languageItemList->sqlOrderBy = 'languageItem.languageItemID ASC';
+		$languageItemList->sqlOrderBy = 'language_item.languageItemID ASC';
 		$languageItemList->readObjects();
 		$data['items'] = $languageItemList->getObjects();
 		
