@@ -63,7 +63,6 @@ CREATE TABLE translate1_language_item (
 	languageID					INT(10)			NOT NULL,
 	languageItem				VARCHAR(191)	NOT NULL	DEFAULT '',
 	languageCategoryID			INT(10)			NOT NULL,
-	checked						TINYINT(1)		NOT NULL	DEFAULT 0,
 	packageID					INT(10),
 	UNIQUE KEY languageItem (languageItem)
 );
@@ -74,6 +73,7 @@ CREATE TABLE translate1_language_item_value (
 	languageID					INT(10)			NOT NULL,
 	languageItemID				INT(10)			NOT NULL,
 	languageItemValue			MEDIUMTEXT		NOT NULL,
+	checked						TINYINT(1)		NOT NULL	DEFAULT 0,
 	UNIQUE KEY languageItem (languageID, languageItemID)
 );
 
@@ -81,6 +81,7 @@ DROP TABLE IF EXISTS translate1_language_item_check;
 CREATE TABLE translate1_language_item_check (
 	languageItemCheckID			INT(10)			NOT NULL	AUTO_INCREMENT PRIMARY KEY,
 	languageItemID				INT(10)			NOT NULL,
+	languageItemValueID			INT(10)			NOT NULL,
 	userID						INT(10),
 	username					VARCHAR(255)	NOT NULL	DEFAULT '',
 	time						INT(10)			NOT NULL	DEFAULT 0,
@@ -98,4 +99,5 @@ ALTER TABLE translate1_language_item_value ADD FOREIGN KEY (languageID) REFERENC
 ALTER TABLE translate1_language_item_value ADD FOREIGN KEY (languageItemID) REFERENCES translate1_language_item (languageItemID) ON DELETE CASCADE;
 
 ALTER TABLE translate1_language_item_check ADD FOREIGN KEY (languageItemID) REFERENCES translate1_language_item (languageItemID) ON DELETE CASCADE;
+ALTER TABLE translate1_language_item_check ADD FOREIGN KEY (languageItemValueID) REFERENCES translate1_language_item_value (languageItemValueID) ON DELETE CASCADE;
 ALTER TABLE translate1_language_item_check ADD FOREIGN KEY (userID) REFERENCES wcf1_user (userID) ON DELETE SET NULL;
