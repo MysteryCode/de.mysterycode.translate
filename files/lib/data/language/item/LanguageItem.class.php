@@ -1,9 +1,9 @@
 <?php
 
 namespace translate\data\language\item;
+use translate\data\language\category\LanguageCategoryCache;
 use translate\data\language\item\value\LanguageItemValueList;
 use translate\data\language\LanguageCache;
-use translate\data\language\LanguageCategoryCache;
 use wcf\data\DatabaseObject;
 
 class LanguageItem extends DatabaseObject {
