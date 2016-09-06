@@ -1,9 +1,10 @@
 <?php
 
 namespace translate\data\language\item;
-use wcf\data\DatabaseObject;
-use translate\data\language\LanguageCache;
 use translate\data\language\item\value\LanguageItemValueList;
+use translate\data\language\LanguageCache;
+use translate\data\language\LanguageCategoryCache;
+use wcf\data\DatabaseObject;
 
 class LanguageItem extends DatabaseObject {
 	/**
@@ -79,5 +80,14 @@ class LanguageItem extends DatabaseObject {
 		}
 		
 		return $this->translations;
+	}
+	
+	/**
+	 * Returns the language category of the current language item
+	 * 
+	 * @return \translate\data\language\category\LanguageCategory
+	 */
+	public function getCategory() {
+		return LanguageCategoryCache::getInstance()->getLanguageCategory($this->languageCategoryID);
 	}
 }
