@@ -71,7 +71,7 @@ class LanguageItem extends DatabaseObject {
 	 * @return null|\translate\data\language\item\value\LanguageItemValue[]
 	 */
 	public function getTranslations() {
-		if ($this->translations === null) {
+		if ($this->translations === null || empty($this->translations)) {
 			$valueList = new LanguageItemValueList();
 			$valueList->getConditionBuilder()->add('language_item_value.languageItemID = ?', [ $this->languageItemID ]);
 			$valueList->readObjects();
