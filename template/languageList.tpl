@@ -2,12 +2,12 @@
 
 {capture assign='headContent'}
 	{if $pageNo < $pages}
-		<link rel="next" href="{link controller='LanguageList'}pageNo={@$pageNo+1}&{@$canonicalURLParameters}{/link}">
+		<link rel="next" href="{link controller='LanguageList' application='translate'}pageNo={@$pageNo+1}&{@$canonicalURLParameters}{/link}">
 	{/if}
 	{if $pageNo > 1}
-		<link rel="prev" href="{link controller='LanguageList'}{if $pageNo > 2}pageNo={@$pageNo-1}&{/if}{@$canonicalURLParameters}{/link}">
+		<link rel="prev" href="{link controller='LanguageList' application='translate'}{if $pageNo > 2}pageNo={@$pageNo-1}&{/if}{@$canonicalURLParameters}{/link}">
 	{/if}
-	<link rel="canonical" href="{link controller='LanguageList'}{if $pageNo > 1}pageNo={@$pageNo}&{/if}{@$canonicalURLParameters}{/link}">
+	<link rel="canonical" href="{link controller='LanguageList' application='translate'}{if $pageNo > 1}pageNo={@$pageNo}&{/if}{@$canonicalURLParameters}{/link}">
 {/capture}
 
 {include file='header'}
@@ -15,7 +15,7 @@
 {hascontent}
 	<div class="paginationTop">
 		{content}
-			{pages print=true assign=pagesLinks controller='LanguageList' link="pageNo=%d&sortField=$sortField&sortOrder=$sortOrder&countryCode=$countryCode"}
+			{pages print=true assign=pagesLinks controller='LanguageList' application='translate' link="pageNo=%d&sortField=$sortField&sortOrder=$sortOrder&countryCode=$countryCode"}
 		{/content}
 	</div>
 {/hascontent}
@@ -68,7 +68,7 @@
 	{hascontent}
 		<nav class="contentFooterNavigation">
 			<ul>
-				<li><a href="{link controller='LanguageAdd'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}wcf.acp.language.add{/lang}</span></a></li>
+				<li><a href="{link controller='LanguageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}wcf.acp.language.add{/lang}</span></a></li>
 				{content}{event name='contentFooterNavigation'}{/content}
 			</ul>
 		</nav>
