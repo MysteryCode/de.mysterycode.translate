@@ -52,7 +52,7 @@
 						</td>
 						
 						{foreach from=$languageItem->getTranslationStatus() item=$status}
-							<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/language}"></span></td>
+							<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{else}question{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/language}"></span></td>
 						{/foreach}
 						
 						{event name='columns'}
