@@ -60,7 +60,6 @@ CREATE TABLE translate1_language_category (
 DROP TABLE IF EXISTS translate1_language_item;
 CREATE TABLE translate1_language_item (
 	languageItemID				INT(10)			NOT NULL	AUTO_INCREMENT PRIMARY KEY,
-	languageID					INT(10)			NOT NULL,
 	languageItem				VARCHAR(191)	NOT NULL	DEFAULT '',
 	languageCategoryID			INT(10)			NOT NULL,
 	packageID					INT(10),
