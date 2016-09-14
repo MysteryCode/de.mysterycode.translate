@@ -13,6 +13,11 @@
 		<item name="translate.language.variables"><![CDATA[Variablen]]></item>
 		<item name="translate.language.variables.checked"><![CDATA[Überprüfte Variablen]]></item>
 	</category>
+	<category name="translate.language.variable">
+		<item name="translate.language.variable.status.confirmed"><![CDATA[Überprüft]]></item>
+		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Nicht überprüft]]></item>
+		<item name="translate.language.variable.status.untranslated"><![CDATA[Nicht übersetzt]]></item>
+	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.translate"><![CDATA[Community Translation Center]]></item>
 		<item name="wcf.acp.option.category.translate.general"><![CDATA[Allgemein]]></item>
