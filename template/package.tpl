@@ -8,8 +8,6 @@
 	</script>
 {/capture}
 
-{include file='userSidebar' assign='sidebarRight'}
-
 {include file='header'}
 
 <div id="packageInformation" class="section">
