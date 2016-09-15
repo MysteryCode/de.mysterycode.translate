@@ -1,8 +1,11 @@
 <?php
 
 namespace translate\data\package;
-use wcf\data\DatabaseObjectList;
+use translate\data\I18nDatabaseObjectList;
 
-class PackageList extends DatabaseObjectList {
-	
+class PackageList extends I18nDatabaseObjectList {
+	/**
+	 * @inheritDoc
+	 */
+	public $i18nFields = [ 'title' ];
 }
