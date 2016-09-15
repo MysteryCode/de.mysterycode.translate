@@ -14,7 +14,7 @@ class LanguageListPage extends SortablePage {
 	/**
 	 * @see \wcf\page\SortablePage::$validSortFields
 	 */
-	public $validSortFields = ['languageID', 'languageCode', 'countryCode', 'foreignLanguageName', 'languageName'];
+	public $validSortFields = ['languageID', 'languageCode', 'countryCode', 'foreignLanguageName', 'languageName', 'i18nlanguageName'];
 	
 	/**
 	 * @see \wcf\page\MultipleLinkPage::$objectListClassname
