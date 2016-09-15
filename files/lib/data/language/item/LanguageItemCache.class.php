@@ -11,13 +11,13 @@ class LanguageItemCache extends SingletonFactory {
 	 * 
 	 * @var \translate\data\language\item\LanguageItem[]
 	 */
-	protected $cachedObjects = array();
+	protected $cachedObjects = [];
 
 	/**
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init () {
-		$this->cachedObjects = LanguageItemCacheBuilder::getInstance()->getData(array(), 'items');
+		$this->cachedObjects = LanguageItemCacheBuilder::getInstance()->getData([], 'items');
 	}
 
 	/**

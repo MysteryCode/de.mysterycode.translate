@@ -11,7 +11,7 @@ class PackageVersionCacheBuilder extends AbstractCacheBuilder {
 	 */
 	protected function rebuild (array $parameters) {
 		$data = array(
-			'versions' => array()
+			'versions' => []
 		);
 		
 		// get all versions

@@ -11,7 +11,7 @@ class PackageCacheBuilder extends AbstractCacheBuilder {
 	 */
 	protected function rebuild (array $parameters) {
 		$data = array(
-			'packages' => array()
+			'packages' => []
 		);
 		
 		// get all packages

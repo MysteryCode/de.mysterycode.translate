@@ -26,7 +26,7 @@ if (isset($this->instruction['attributes']['installupdateserver']) && $this->ins
 	$statement->execute(array($serverURL));
 	$row = $statement->fetchArray();
 	if ($row === false) {
-		$objectAction = new PackageUpdateServerAction(array(), 'create', array('data' => array(
+		$objectAction = new PackageUpdateServerAction([], 'create', array('data' => array(
 			'serverURL' => $serverURL
 		)));
 		$objectAction->executeAction();

@@ -11,13 +11,13 @@ class PackageVersionCache extends SingletonFactory {
 	 * 
 	 * @var \translate\data\package\version\PackageVersion[]
 	 */
-	protected $cachedObjects = array();
+	protected $cachedObjects = [];
 
 	/**
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init () {
-		$this->cachedObjects = PackageVersionCacheBuilder::getInstance()->getData(array(), 'versions');
+		$this->cachedObjects = PackageVersionCacheBuilder::getInstance()->getData([], 'versions');
 	}
 
 	/**

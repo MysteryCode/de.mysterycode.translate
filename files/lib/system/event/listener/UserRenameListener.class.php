@@ -14,7 +14,7 @@ class UserRenameListener implements IParameterizedEventListener {
 		$parameters = $eventObj->getParameters();
 		$username = $parameters['data']['username'];
 		
-		$sql = array();
+		$sql = [];
 		// package versions
 		$sql[] = "UPDATE		translate" . WCF_N . "_package_version
 			SET		username = ?

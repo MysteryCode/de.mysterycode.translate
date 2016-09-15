@@ -11,13 +11,13 @@ class LanguageCategoryCache extends SingletonFactory {
 	 * 
 	 * @var \translate\data\language\category\LanguageCategory[]
 	 */
-	protected $cachedObjects = array();
+	protected $cachedObjects = [];
 
 	/**
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init () {
-		$this->cachedObjects = LanguageCategoryCacheBuilder::getInstance()->getData(array(), 'categories');
+		$this->cachedObjects = LanguageCategoryCacheBuilder::getInstance()->getData([], 'categories');
 	}
 
 	/**

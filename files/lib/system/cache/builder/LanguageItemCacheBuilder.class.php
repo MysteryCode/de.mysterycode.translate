@@ -11,7 +11,7 @@ class LanguageItemCacheBuilder extends AbstractCacheBuilder {
 	 */
 	protected function rebuild (array $parameters) {
 		$data = array(
-			'items' => array()
+			'items' => []
 		);
 		
 		// get all items

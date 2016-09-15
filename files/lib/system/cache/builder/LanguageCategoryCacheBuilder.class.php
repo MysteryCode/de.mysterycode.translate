@@ -11,7 +11,7 @@ class LanguageCategoryCacheBuilder extends AbstractCacheBuilder {
 	 */
 	protected function rebuild (array $parameters) {
 		$data = array(
-			'categories' => array()
+			'categories' => []
 		);
 		
 		// get all categories

@@ -7,7 +7,7 @@ use wcf\system\option\SelectOptionType;
 
 class LanguageSelectOptionType extends SelectOptionType {
 	protected function getSelectOptions(Option $option) {
-		$languages = array();
+		$languages = [];
 		
 		$languageList = new LanguageList();
 		$languageList->readObjects();

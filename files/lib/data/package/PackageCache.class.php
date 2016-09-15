@@ -11,7 +11,7 @@ class PackageCache extends SingletonFactory {
 	 * 
 	 * @var \translate\data\package\Package[]
 	 */
-	protected $cachedObjects = array();
+	protected $cachedObjects = [];
 	
 	/**
 	 * identifier as array-key
@@ -25,7 +25,7 @@ class PackageCache extends SingletonFactory {
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init () {
-		$this->cachedObjects = PackageCacheBuilder::getInstance()->getData(array(), 'packages');
+		$this->cachedObjects = PackageCacheBuilder::getInstance()->getData([], 'packages');
 		
 		foreach ($this->cachedObjects as $package) {
 			$this->packageIDs[$package->identifier] = $package->packageID;

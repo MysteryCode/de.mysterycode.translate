@@ -11,7 +11,7 @@ class LanguageCacheBuilder extends AbstractCacheBuilder {
 	 */
 	protected function rebuild (array $parameters) {
 		$data = array(
-			'languages' => array()
+			'languages' => []
 		);
 		
 		// get all languages
