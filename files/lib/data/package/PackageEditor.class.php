@@ -1,6 +1,7 @@
 <?php
 
 namespace translate\data\package;
+use translate\data\package\Package;
 use translate\system\cache\builder\PackageCacheBuilder;
 use wcf\data\DatabaseObjectEditor;
 use wcf\data\IEditableCachedObject;
@@ -9,7 +10,7 @@ class PackageEditor extends DatabaseObjectEditor implements IEditableCachedObjec
 	/**
 	 * @see \wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'translate\data\package\Package';
+	protected static $baseClass = Package::class;
 	
 	/**
 	 * @see	\wcf\data\IEditableCachedObject::resetCache()

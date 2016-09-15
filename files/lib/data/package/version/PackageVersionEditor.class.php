@@ -1,6 +1,7 @@
 <?php
 
 namespace translate\data\package\version;
+use translate\data\package\version\PackageVersion;
 use translate\system\cache\builder\PackageVersionCacheBuilder;
 use wcf\data\DatabaseObjectEditor;
 use wcf\data\IEditableCachedObject;
@@ -9,7 +10,7 @@ class PackageVersionEditor extends DatabaseObjectEditor implements IEditableCach
 	/**
 	 * @see \wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'translate\data\package\version\PackageVersion';
+	protected static $baseClass = PackageVersion::class;
 	
 	/**
 	 * @see	\wcf\data\IEditableCachedObject::resetCache()

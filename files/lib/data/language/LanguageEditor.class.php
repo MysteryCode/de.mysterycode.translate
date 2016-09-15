@@ -1,6 +1,7 @@
 <?php
 
 namespace translate\data\language;
+use translate\data\language\Language;
 use translate\system\cache\builder\LanguageCacheBuilder;
 use wcf\data\DatabaseObjectEditor;
 use wcf\data\IEditableCachedObject;
@@ -9,7 +10,7 @@ class LanguageEditor extends DatabaseObjectEditor implements IEditableCachedObje
 	/**
 	 * @see \wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'translate\data\language\Language';
+	protected static $baseClass = Language::class;
 	
 	/**
 	 * @see	\wcf\data\IEditableCachedObject::resetCache()
