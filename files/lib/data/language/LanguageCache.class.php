@@ -12,12 +12,24 @@ class LanguageCache extends SingletonFactory {
 	 * @var \translate\data\language\Language[]
 	 */
 	protected $cachedObjects = array();
-
+	
+	/**
+	 * language code as key
+	 * languageID as value
+	 * 
+	 * @var interger[]
+	 */
+	protected $languageIDs = [];
+	
 	/**
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init () {
 		$this->cachedObjects = LanguageCacheBuilder::getInstance()->getData(array(), 'languages');
+		
+		foreach ($this->cachedObjects as $language) {
+			$this->languageIDs[$language->languageCode] = $language->languageID;
+		}
 	}
 
 	/**
@@ -41,5 +53,32 @@ class LanguageCache extends SingletonFactory {
 	 */
 	public function getLanguages () {
 		return $this->cachedObjects;
+	}
+	
+	/**
+	 * Returns the if of the language matching the given languageCode
+	 * 
+	 * @param string $languageCode
+	 * @return NULL|\translate\data\language\interger
+	 */
+	public function getLanguageIDByCode($languageCode) {
+		if (empty($this->languageIDs[$languageCode]))
+			return null;
+		
+		return $this->languageIDs[$languageCode];
+	}
+	
+	/**
+	 * Returns the language object matching the given languageCode
+	 * 
+	 * @param string $languageCode
+	 * @return NULL|\translate\data\language\Language
+	 */
+	public function getLanguageByCode($languageCode) {
+		$languageID = $this->getLanguageIDByCode($languageCode);
+		if (empty($languageID) || $languageID === null)
+			return null;
+		
+		return self::getInstance()->getLanguage($languageID);
 	}
 }
