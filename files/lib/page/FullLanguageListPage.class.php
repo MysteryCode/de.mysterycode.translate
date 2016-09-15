@@ -1,6 +1,7 @@
 <?php
 
 namespace translate\page;
+use translate\data\language\LanguageList;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
 
@@ -18,7 +19,7 @@ class FullLanguageListPage extends SortablePage {
 	/**
 	 * @see \wcf\page\MultipleLinkPage::$objectListClassname
 	 */
-	public $objectListClassName = 'translate\\data\\language\\LanguageList';
+	public $objectListClassName = LanguageList::class;
 	
 	/**
 	 * @see \wcf\page\AbstractPage::$templateName
