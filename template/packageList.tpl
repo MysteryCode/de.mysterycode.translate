@@ -60,7 +60,7 @@
 						</td>
 						<td class="columnText columnPackageVersion">{$package->getCurrentVersion()->version}</td>
 						<td class="columnDigits columnVariables">{#$package->variables}</td>
-						<td class="columnDigits columnCustomVariables">{#$package->variables}</td>
+						<td class="columnDigits columnCustomVariables">{#$package->variablesChecked}</td>
 						
 						{event name='columns'}
 					</tr>
