@@ -43,13 +43,13 @@ class LanguageListPage extends SortablePage {
 		parent::initObjectList();
 		
 		if (!empty($this->countryCode)) {
-			$this->objectList->getConditionBuilder()->add('countryCode = ?', array($this->countryCode));
+			$this->objectList->getConditionBuilder()->add('countryCode = ?', [ $this->countryCode ]);
 		}
 		
 		if (WCF::getUser()->userID) {
 			$excludedLanguages = WCF::getUser()->getUserOption('translateExcludedLanguages');
 			if (!empty($excludedLanguages)) {
-				$this->objectList->getConditionBuilder()->add('languageCode NOT IN (?)', array($excludedLanguages));
+				$this->objectList->getConditionBuilder()->add('languageCode NOT IN (?)', [ $excludedLanguages ]);
 			}
 		}
 	}

@@ -47,7 +47,7 @@ class FullLanguageListPage extends SortablePage {
 		parent::initObjectList();
 		
 		if (!empty($this->countryCode)) {
-			$this->objectList->getConditionBuilder()->add('countryCode = ?', array($this->countryCode));
+			$this->objectList->getConditionBuilder()->add('countryCode = ?', [ $this->countryCode ]);
 		}
 	}
 	

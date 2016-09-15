@@ -26,7 +26,7 @@ class UserRenameListener implements IParameterizedEventListener {
 		
 		foreach ($sql as $query) {
 			$statement = WCF::getDB()->prepareStatement($query);
-			$statement->execute(array($username, $userID));
+			$statement->execute([ $username, $userID ]);
 		}
 	}
 }

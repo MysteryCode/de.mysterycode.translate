@@ -10,9 +10,9 @@ class LanguageCategoryCacheBuilder extends AbstractCacheBuilder {
 	 * @see \wcf\system\cache\builder\AbstractCacheBuilder::rebuild()
 	 */
 	protected function rebuild (array $parameters) {
-		$data = array(
+		$data = [
 			'categories' => []
-		);
+		];
 		
 		// get all categories
 		$languageCategoryList = new LanguageCategoryList();

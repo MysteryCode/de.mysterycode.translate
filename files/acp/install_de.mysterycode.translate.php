@@ -11,7 +11,7 @@ if (!defined('PAGE_TITLE') || !PAGE_TITLE) {
 		SET	optionValue = ?
 		WHERE	optionName = ?";
 	$statement = WCF::getDB()->prepareStatement($sql);
-	$statement->execute(array('Community Translation Center', 'page_title'));
+	$statement->execute([ 'Community Translation Center', 'page_title' ]);
 }
 
 // add mysterycode update server
@@ -23,12 +23,12 @@ if (isset($this->instruction['attributes']['installupdateserver']) && $this->ins
 		FROM	wcf".WCF_N."_package_update_server
 		WHERE	serverURL = ?";
 	$statement = WCF::getDB()->prepareStatement($sql);
-	$statement->execute(array($serverURL));
+	$statement->execute([ $serverURL ]);
 	$row = $statement->fetchArray();
 	if ($row === false) {
-		$objectAction = new PackageUpdateServerAction([], 'create', array('data' => array(
+		$objectAction = new PackageUpdateServerAction([], 'create', ['data' => [
 			'serverURL' => $serverURL
-		)));
+		]]);
 		$objectAction->executeAction();
 	}
 }

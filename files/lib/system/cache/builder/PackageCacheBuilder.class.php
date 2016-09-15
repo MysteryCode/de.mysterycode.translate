@@ -10,9 +10,9 @@ class PackageCacheBuilder extends AbstractCacheBuilder {
 	 * @see \wcf\system\cache\builder\AbstractCacheBuilder::rebuild()
 	 */
 	protected function rebuild (array $parameters) {
-		$data = array(
+		$data = [
 			'packages' => []
-		);
+		];
 		
 		// get all packages
 		$packageList = new PackageList();
