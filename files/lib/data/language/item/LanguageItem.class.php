@@ -44,7 +44,7 @@ class LanguageItem extends DatabaseObject {
 			if ($this->translations === null)
 				$this->getTranslations();
 			
-			if(empty($this->translations[$languageID])) {
+			if (empty($this->translations[$languageID])) {
 				return -1;
 			} else {
 				if (!$this->translations[$languageID]->checked)
