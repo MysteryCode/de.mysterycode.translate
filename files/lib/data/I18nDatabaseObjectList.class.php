@@ -2,6 +2,7 @@
 
 namespace translate\data;
 use wcf\data\DatabaseObjectList;
+use wcf\system\WCF;
 use wcf\util\StringUtil;
 
 abstract class I18nDatabaseObjectList extends DatabaseObjectList {
