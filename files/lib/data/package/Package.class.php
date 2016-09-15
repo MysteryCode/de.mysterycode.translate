@@ -2,11 +2,13 @@
 
 namespace translate\data\package;
 use translate\data\package\version\PackageVersionList;
-use wcf\data\package\Package as WCFPackage;
 use wcf\data\DatabaseObject;
+use wcf\data\package\Package as WCFPackage;
+use wcf\system\request\IRouteController;
+use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
 
-class Package extends DatabaseObject {
+class Package extends DatabaseObject implements IRouteController {
 	protected $currentVersion = null;
 	
 	public function getTitle() {
@@ -27,5 +29,16 @@ class Package extends DatabaseObject {
 		}
 		
 		return $this->currentVersion;
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getLink() {
+		return LinkHandler::getInstance()->getLink('Package', [
+			'application' => 'translate',
+			'object' => $this,
+			'forceFrontend' => true
+		]);
 	}
 }

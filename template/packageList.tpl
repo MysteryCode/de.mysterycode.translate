@@ -46,7 +46,7 @@
 						</td>
 						<td class="columnID columnPackageID">{@$package->packageID}</td>
 						<td class="columnTitle columnPackageName">
-							<a href="{link controller='Package' application='translate' object=$package}{/link}">{$package->getTitle()}</a>
+							<a href="{$package->getLink()}">{$package->getTitle()}</a>
 							{if $package->author}
 								<br>
 								<small>
