@@ -59,7 +59,7 @@ class LanguageCache extends SingletonFactory {
 	 * Returns the if of the language matching the given languageCode
 	 * 
 	 * @param string $languageCode
-	 * @return NULL|\translate\data\language\interger
+	 * @return NULL|integer
 	 */
 	public function getLanguageIDByCode($languageCode) {
 		if (empty($this->languageIDs[$languageCode]))
@@ -76,9 +76,9 @@ class LanguageCache extends SingletonFactory {
 	 */
 	public function getLanguageByCode($languageCode) {
 		$languageID = $this->getLanguageIDByCode($languageCode);
-		if (empty($languageID) || $languageID === null)
+		if (empty($languageID))
 			return null;
 		
-		return self::getInstance()->getLanguage($languageID);
+		return $this->getLanguage($languageID);
 	}
 }

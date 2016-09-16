@@ -59,7 +59,7 @@ class PackageCache extends SingletonFactory {
 	 * Returns the packageID of the package matching the given identifier string
 	 *  
 	 * @param string $identifier
-	 * @return NULL|\translate\data\package\integer
+	 * @return NULL|integer
 	 */
 	public function getPackageIDByIdentifier($identifier) {
 		if (empty($this->packageIDs[$identifier]))
@@ -76,9 +76,9 @@ class PackageCache extends SingletonFactory {
 	 */
 	public function getPackageByIdentifier($identifier) {
 		$packageID = $this->getPackageIDByIdentifier($identifier);
-		if (empty($packageID) || $packageID === null)
+		if (empty($packageID))
 			return null;
 		
-		return self::getInstance()->getPackage($packageID);
+		return $this->getPackage($packageID);
 	}
 }
