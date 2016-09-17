@@ -12,6 +12,14 @@ class LanguageCategoryCache extends SingletonFactory {
 	 * @var \translate\data\language\category\LanguageCategory[]
 	 */
 	protected $cachedObjects = [];
+	
+	/**
+	 * categoryName as array-key
+	 * categoryID as value
+	 *
+	 * @var integer[]
+	 */
+	protected $categoryIDs = [];
 
 	/**
 	 * @see \wcf\system\SingletonFactory::init()
@@ -41,5 +49,32 @@ class LanguageCategoryCache extends SingletonFactory {
 	 */
 	public function getLanguageCategories () {
 		return $this->cachedObjects;
+	}
+	
+	/**
+	 * Returns the categoryID of the category matching the given name
+	 *
+	 * @param string $categoryName
+	 * @return NULL|integer
+	 */
+	public function getLanguageCategoryIDByName($categoryName) {
+		if (empty($this->categoryIDs[$categoryName]))
+			return null;
+		
+		return $this->categoryIDs[$categoryName];
+	}
+	
+	/**
+	 * Returns the category object matching the given name
+	 *
+	 * @param string $categoryName
+	 * @return NULL|\translate\data\language\category\LanguageCategory
+	 */
+	public function getLanguageCategoryByName($categoryName) {
+		$categoryID = $this->getLanguageCategoryIDByName($categoryName);
+		if (empty($categoryID))
+			return null;
+		
+		return $this->getLanguageCategory($categoryID);
 	}
 }
