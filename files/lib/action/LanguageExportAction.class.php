@@ -3,6 +3,7 @@
 namespace translate\action;
 use translate\data\language\category\LanguageCategoryList;
 use translate\data\language\item\LanguageItemList;
+use translate\data\language\item\value\LanguageItemValue;
 use translate\data\language\LanguageCache;
 use wcf\action\AbstractAction;
 use wcf\system\exception\IllegalLinkException;
@@ -49,9 +50,13 @@ class LanguageExportAction extends AbstractAction {
 			$categories[$languageCategory->languageCategoryID] = $languageCategory->languageCategory;
 		}
 		
+		$tableName = LanguageItemValue::getDatabaseTableName();
+		$tableAlias = LanguageItemValue::getDatabaseTableAlias();
+		
 		$languageItemList = new LanguageItemList();
-		$languageItemList->getConditionBuilder()->add('language_item.checked = ?', [ 1 ]);
-		$languageItemList->getConditionBuilder()->add('language_item.languageID = ?', [ $this->languageID ]);
+		$languageItemList->sqlJoins .= " INNER JOIN " . $tableName . " " . $tableAlias . " ON " . $tableAlias . ".languageItemID = language_item.languageItemID AND " . $tableAlias . ".checked = 1 AND " . $tableAlias . ".languageID = " . $this->languageID;
+		//$languageItemList->getConditionBuilder()->add('language_item.checked = ?', [ 1 ]);
+		//$languageItemList->getConditionBuilder()->add('language_item.languageID = ?', [ $this->languageID ]);
 		$languageItemList->readObjects();
 		
 		foreach ($languageItemList->getObjects() as $languageItem) {
