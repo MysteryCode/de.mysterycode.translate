@@ -7,6 +7,7 @@ use translate\data\language\category\LanguageCategoryCache;
 use translate\data\language\item\value\LanguageItemValue;
 use translate\data\language\item\value\LanguageItemValueAction;
 use translate\data\language\item\value\LanguageItemValueEditor;
+use translate\data\language\item\LanguageItem;
 use translate\data\language\item\LanguageItemAction;
 use translate\data\language\item\LanguageItemCache;
 use translate\data\language\item\LanguageItemList;
@@ -17,7 +18,6 @@ use wcf\data\cronjob\Cronjob;
 use wcf\system\cronjob\AbstractCronjob;
 use wcf\system\language\LanguageFactory;
 use wcf\system\WCF;
-use translate\data\language\item\LanguageItem;
 
 class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 
