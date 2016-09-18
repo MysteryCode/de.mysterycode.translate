@@ -3,7 +3,7 @@
 namespace translate\system\cronjob;
 use wcf\data\cronjob\Cronjob;
 
-class SyncTranslateLanguageItemsCronjob extends ´SyncWCFLanguageItemsCronjob {
+class SyncTranslateLanguageItemsCronjob extends SyncWCFLanguageItemsCronjob {
 	public $languageFileFolder = '';
 	
 	public $packageName = 'de.mysterycode.translate';
