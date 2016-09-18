@@ -5,6 +5,7 @@ use translate\data\language\category\LanguageCategoryCache;
 use translate\data\language\item\value\LanguageItemValueList;
 use translate\data\language\LanguageCache;
 use wcf\data\DatabaseObject;
+use wcf\system\WCF;
 
 class LanguageItem extends DatabaseObject {
 	/**
