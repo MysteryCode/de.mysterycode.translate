@@ -25,5 +25,17 @@
 			<active>1</active>
 			<classname>translate\system\cronjob\SyncWCFLanguageItemsCronjob</classname>
 		</cronjob>
+		<cronjob name="de.mysterycode.translate.syncTranslateLanguageItems">
+			<description>Syncs Translation Centers's language items via XML files from master branch</description>
+			<startdom>*</startdom>
+			<startdow>*</startdow>
+			<starthour>5</starthour>
+			<startminute>0</startminute>
+			<startmonth>*</startmonth>
+			<canbeedited>1</canbeedited>
+			<canbedisabled>1</canbedisabled>
+			<active>1</active>
+			<classname>translate\system\cronjob\SyncTranslateLanguageItemsCronjob</classname>
+		</cronjob>
 	</import>
 </data>

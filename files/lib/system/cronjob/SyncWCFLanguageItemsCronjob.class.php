@@ -24,15 +24,18 @@ use wcf\system\WCF;
 
 class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 
+	public $languageFileFolder = '';
+
+	public $packageName = 'com.woltlab.wcf';
+
 	public function execute (Cronjob $cronjob) {
 		parent::execute($cronjob);
 		
+		$this->fixFolderPath();
+		
 		$langItemList = new LanguageItemList();
-		$langItemList->getConditionBuilder()->add('language_item.packageID IN (?)', [
-			[
-				PackageCache::getInstance()->getPackageIDByIdentifier('com.woltlab.wcf'),
-				PackageCache::getInstance()->getPackageIDByIdentifier('de.mysterycode.translate')
-			]
+		$langItemList->getConditionBuilder()->add('language_item.packageID = ?', [
+			PackageCache::getInstance()->getPackageIDByIdentifier($this->packageName)
 		]);
 		$langItemList->readObjects();
 		
@@ -57,13 +60,11 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 			unset($values);
 		}
 		
-		// yep, it's a specific path
-		$folder = str_replace('translate.mysterycode.de', '', WCF_DIR) . 'git/wcf-next/wcfsetup/install/lang/';
 		foreach ([
 			'de',
 			'en'
 		] as $languageCode) {
-			$content = file_get_contents($folder . $languageCode . '.xml');
+			$content = file_get_contents($this->languageFileFolder . $languageCode . '.xml');
 			$structure = LanguageFileReaderUtil::parseXML($content);
 			$language = LanguageCache::getInstance()->getLanguageByCode($languageCode);
 			
@@ -91,11 +92,11 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 					if (! isset($existingItems[$language->languageID][$languageItem])) {
 						$languageItemObject = LanguageItem::getLanguageItemByIdentifier($languageItem);
 						
-						if ($languageItemObject == null || !$languageItemObject->languageItemID) {
+						if ($languageItemObject == null || ! $languageItemObject->languageItemID) {
 							$languageItemAction = new LanguageItemAction([], 'create', [
 								'data' => [
 									'languageItem' => $languageItem,
-									'packageID' => PackageCache::getInstance()->getPackageIDByIdentifier('com.woltlab.wcf'),
+									'packageID' => PackageCache::getInstance()->getPackageIDByIdentifier($this->packageName),
 									'languageCategoryID' => $category->languageCategoryID
 								]
 							]);
@@ -151,5 +152,10 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 		LanguageItemEditor::resetCache();
 		LanguageEditor::resetCache();
 		PackageEditor::resetCache();
+	}
+
+	protected function fixFolderPath () {
+		// yep, it's a specific path
+		$this->languageFileFolder = str_replace('translate.mysterycode.de', '', WCF_DIR) . 'git/wcf-next/wcfsetup/install/lang/';
 	}
 }
