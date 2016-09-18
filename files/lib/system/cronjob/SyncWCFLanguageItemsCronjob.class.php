@@ -17,6 +17,7 @@ use wcf\data\cronjob\Cronjob;
 use wcf\system\cronjob\AbstractCronjob;
 use wcf\system\language\LanguageFactory;
 use wcf\system\WCF;
+use translate\data\language\item\LanguageItem;
 
 class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 
@@ -84,22 +85,26 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 				foreach ($languageItems as $languageItem => $languageItemValue) {
 					if (empty($languageItemValue)) continue;
 					
-					if (! isset($existingItems[$language->languageID][$langItem])) {
-						$languageItemAction = new LanguageItemAction([], 'create', [
-							'data' => [
-								'languageItem' => $langItem,
-								'packageID' => PackageCache::getInstance()->getPackageIDByIdentifier('com.woltlab.wcf'),
-								'langaugeCategoryID' => $category->languageCategoryID
-							]
-						]);
-						$itemResult = $languageItemAction->executeAction();
-						$languageItemObject = $itemResult['returnValues'];
+					if (! isset($existingItems[$language->languageID][$languageItem])) {
+						$languageItemObject = LanguageItem::getLanguageItemByIdentifier($languageItem);
+						
+						if (!$languageItemObject->languageItemID) {
+							$languageItemAction = new LanguageItemAction([], 'create', [
+								'data' => [
+									'languageItem' => $languageItem,
+									'packageID' => PackageCache::getInstance()->getPackageIDByIdentifier('com.woltlab.wcf'),
+									'languageCategoryID' => $category->languageCategoryID
+								]
+							]);
+							$itemResult = $languageItemAction->executeAction();
+							$languageItemObject = $itemResult['returnValues'];
+						}
 					}
 					else {
 						$languageItemObject = LanguageItemCache::getInstance()->getLanguageItemIDByIdentifier($languageItem);
 					}
 					
-					if (empty($existingItems[$language->languageID][$langItem])) {
+					if (empty($existingItems[$language->languageID][$languageItem])) {
 						$languageItemValueAction = new LanguageItemValueAction([], 'create', [
 							'data' => [
 								'languageID' => $language->languageID,
@@ -111,7 +116,7 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 						continue;
 					}
 					
-					if ($existingItems[$language->languageID][$langItem] != $languageItemValue) {
+					if ($existingItems[$language->languageID][$languageItem] != $languageItemValue) {
 						$sql = "SELECT language_item_value.*
 							FROM translate" . WCF_N . "_language_item_value language_item_value
 							WHERE language_item_value.languageItemID = ?

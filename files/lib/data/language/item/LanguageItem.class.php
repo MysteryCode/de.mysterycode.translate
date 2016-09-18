@@ -92,4 +92,24 @@ class LanguageItem extends DatabaseObject {
 	public function getCategory() {
 		return LanguageCategoryCache::getInstance()->getLanguageCategory($this->languageCategoryID);
 	}
+	
+	/**
+	 * Returns the language item object uncached based on the given identifier
+	 *
+	 * @param string $identifier
+	 * @return NULL|\translate\data\language\item\LanguageItem
+	 */
+	public static function getLanguageItemByIdentifier($identifier) {
+		$sql = "SELECT *
+			FROM translate". WCF_N . "_language_item
+			WHERE languageItem = ?";
+		$statement = WCF::getDB()->prepareStatement($sql);
+		$statement->execute([ $identifier ]);
+		$result = $statement->fetchArray();
+		
+		if ($result === false)
+			return null;
+		
+		return new self(null, $result);
+	}
 }
