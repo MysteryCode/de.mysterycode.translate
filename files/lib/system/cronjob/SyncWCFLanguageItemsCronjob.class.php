@@ -147,7 +147,6 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 			unset($content, $structure);
 		}
 		
-		
 		// reset caches
 		LanguageItemEditor::resetCache();
 		LanguageEditor::resetCache();
