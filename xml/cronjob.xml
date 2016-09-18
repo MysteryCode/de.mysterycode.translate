@@ -17,13 +17,13 @@
 			<description>Syncs WCF's language items via XML files from master branch</description>
 			<startdom>*</startdom>
 			<startdow>*</startdow>
-			<starthour>4</starthour>
+			<starthour>5</starthour>
 			<startminute>0</startminute>
 			<startmonth>*</startmonth>
 			<canbeedited>1</canbeedited>
 			<canbedisabled>1</canbedisabled>
 			<active>1</active>
-			<classname>translate\system\cronjob\GitHubFetchCronjob</classname>
+			<classname>translate\system\cronjob\SyncWCFLanguageItemsCronjob</classname>
 		</cronjob>
 	</import>
 </data>
