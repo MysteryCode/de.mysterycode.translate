@@ -88,7 +88,7 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 					if (! isset($existingItems[$language->languageID][$languageItem])) {
 						$languageItemObject = LanguageItem::getLanguageItemByIdentifier($languageItem);
 						
-						if (!$languageItemObject->languageItemID) {
+						if ($languageItemObject == null || !$languageItemObject->languageItemID) {
 							$languageItemAction = new LanguageItemAction([], 'create', [
 								'data' => [
 									'languageItem' => $languageItem,
