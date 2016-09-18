@@ -12,6 +12,7 @@
 	<category name="translate.language">
 		<item name="translate.language.variables"><![CDATA[Variables]]></item>
 		<item name="translate.language.variables.checked"><![CDATA[Checked variables]]></item>
+		<item name="translate.language.noLanguageItems"><![CDATA[No language items available.]]></item>
 	</category>
 	<category name="translate.language.variable">
 		<item name="translate.language.variable.status.confirmed"><![CDATA[Confirmed]]></item>
