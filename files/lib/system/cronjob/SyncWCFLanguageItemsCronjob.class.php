@@ -113,6 +113,7 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 								'checked' => 1
 							]
 						]);
+						$languageItemValueAction->executeAction();
 						continue;
 					}
 					
