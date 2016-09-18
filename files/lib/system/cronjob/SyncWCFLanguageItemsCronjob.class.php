@@ -18,6 +18,9 @@ use wcf\data\cronjob\Cronjob;
 use wcf\system\cronjob\AbstractCronjob;
 use wcf\system\language\LanguageFactory;
 use wcf\system\WCF;
+use translate\data\language\LanguageEditor;
+use translate\data\language\item\LanguageItemEditor;
+use translate\data\package\PackageEditor;
 
 class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 
@@ -143,5 +146,11 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 			
 			unset($content, $structure);
 		}
+		
+		
+		// reset caches
+		LanguageItemEditor::resetCache();
+		LanguageEditor::resetCache();
+		PackageEditor::resetCache();
 	}
 }
