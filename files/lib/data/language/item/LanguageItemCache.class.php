@@ -6,14 +6,24 @@ use wcf\system\SingletonFactory;
 use wcf\system\WCF;
 
 class LanguageItemCache extends SingletonFactory {
+
 	/**
 	 * cached language items
-	 * 
+	 *
 	 * @var \translate\data\language\item\LanguageItem[]
 	 */
 	protected $cachedObjects = [];
 
 	/**
+	 * languageItem as key
+	 * languageItemID as value
+	 *
+	 * @var integer[]
+	 */
+	protected $itemIDs = [];
+
+	/**
+	 *
 	 * @see \wcf\system\SingletonFactory::init()
 	 */
 	protected function init () {
@@ -41,5 +51,30 @@ class LanguageItemCache extends SingletonFactory {
 	 */
 	public function getLanguageItems () {
 		return $this->cachedObjects;
+	}
+
+	/**
+	 * Returns the id of the language matching the given identifier
+	 *
+	 * @param string $languageItem        	
+	 * @return NULL|integer
+	 */
+	public function getLanguageItemIDByIdentifier ($languageItem) {
+		if (empty($this->languageIDs[$languageItem])) return null;
+		
+		return $this->languageIDs[$languageItem];
+	}
+
+	/**
+	 * Returns the language item object matching the given identifier
+	 *
+	 * @param string $languageItem        	
+	 * @return NULL|\translate\data\language\item\LanguageItem
+	 */
+	public function getLanguageItemByIdentifier ($languageItem) {
+		$itemID = $this->getLanguageIDByCode($languageItem);
+		if (empty($itemID)) return null;
+		
+		return $this->getLanguageItemIDByIdentifier($itemID);
 	}
 }
