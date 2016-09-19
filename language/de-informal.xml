@@ -10,7 +10,7 @@
 		<item name="translate.package.identifier"><![CDATA[Paketbezeichner]]></item>
 		<item name="translate.package.description"><![CDATA[Beschreibung]]></item>
 		<item name="translate.package.application"><![CDATA[Endanwendung]]></item>
-		<item name="translate.package.isuniquie"><![CDATA[Nur eine parallele Installation möglich (WCF 1)]]></item>
+		<item name="translate.package.isunique"><![CDATA[Nur eine parallele Installation möglich (WCF 1)]]></item>
 		<item name="translate.package.plugin"><![CDATA[Plugin für (WCF 1)]]></item>
 		<item name="translate.package.author"><![CDATA[Autor]]></item>
 		<item name="translate.package.authorUrl"><![CDATA[Website des Autors]]></item>

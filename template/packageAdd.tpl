@@ -142,10 +142,10 @@
 				</dd>
 			</dl>
 			
-			<dl{if $errorField == 'isuniquie'} class="formError"{/if}>
-				<dt>{lang}translate.package.isuniquie{/lang}</dt>
+			<dl{if $errorField == 'isunique'} class="formError"{/if}>
+				<dt>{lang}translate.package.isunique{/lang}</dt>
 				<dd>
-					<input type="checkbox" id="isuniquie" name="isuniquie" value="1" {if $application}checked{/if}>
+					<input type="checkbox" id="isunique" name="isunique" value="1" {if $application}checked{/if}>
 				</dd>
 			</dl>
 			

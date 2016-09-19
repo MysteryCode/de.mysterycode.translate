@@ -37,7 +37,7 @@ class PackageEditForm extends PackageAddForm {
 				'title' => $this->title,
 				'description' => $this->description,
 				'application' => $this->application,
-				'isuniquie' => $this->isunique,
+				'isunique' => $this->isunique,
 				'plugin' => $this->plugin,
 				'author' => $this->author,
 				'authorUrl' => $this->authorUrl,
