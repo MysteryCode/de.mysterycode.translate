@@ -16,7 +16,7 @@
 		
 		<nav class="contentHeaderNavigation">
 			<ul>
-				<li><a href="{link controller='PackageList' application='translate'}{/link}" class="button"><span class="icon icon16 fa-list"></span> <span>{lang}translate.language.add{/lang}</span></a></li>
+				<li><a href="{link controller='PackageList' application='translate'}{/link}" class="button"><span class="icon icon16 fa-list"></span> <span>{lang}translate.package.list{/lang}</span></a></li>
 				
 				{event name='contentHeaderNavigation'}
 			</ul>
