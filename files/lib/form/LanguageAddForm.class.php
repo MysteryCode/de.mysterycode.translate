@@ -123,7 +123,8 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign([
-			'foreignLanguageName' => $this->foreignLanguageName
+			'foreignLanguageName' => $this->foreignLanguageName,
+			'languages' => $this->languages
 		]);
 	}
 }
