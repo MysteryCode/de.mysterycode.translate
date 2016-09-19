@@ -1,3 +1,29 @@
+{capture assign='contentHeader'}
+	{if $contentTitle|empty}
+		{if $__wcf->isLandingPage()}
+			{capture assign='contentTitle'}{PAGE_TITLE|language}{/capture}
+			{capture assign='contentDescription'}{PAGE_DESCRIPTION|language}{/capture}
+		{elseif $__wcf->getActivePage() != null && $__wcf->getActivePage()->getTitle()}
+			{capture assign='contentTitle'}{$__wcf->getActivePage()->getTitle()}{/capture}
+		{/if}
+	{/if}
+	
+	<header class="contentHeader">
+		<div class="contentHeaderTitle">
+			<h1 class="contentTitle">{@$contentTitle}</h1>
+			{if !$contentDescription|empty}<p class="contentHeaderDescription">{@$contentDescription}</p>{/if}
+		</div>
+		
+		<nav class="contentHeaderNavigation">
+			<ul>
+				<li><a href="{link controller='LanguageList' application='translate'}{/link}" class="button"><span class="icon icon16 fa-list"></span> <span>{lang}translate.language.add{/lang}</span></a></li>
+				
+				{event name='contentHeaderNavigation'}
+			</ul>
+		</nav>
+	</header>
+{/capture}
+
 {include file='header'}
 
 {include file='formError'}
@@ -103,12 +129,10 @@
 	
 	{event name='afterSections'}
 	
-	{if !$__wcf->user->userID}
-		<div class="formSubmit">
-			<input type="submit" name="submit" value="{lang}wcf.global.submit{/lang}" accesskey="s">
-			{@SECURITY_TOKEN_INPUT_TAG}
-		</div>
-	{/if}
+	<div class="formSubmit">
+		<input type="submit" name="submit" value="{lang}wcf.global.submit{/lang}" accesskey="s">
+		{@SECURITY_TOKEN_INPUT_TAG}
+	</div>
 </form>
 
 {include file='footer'}
