@@ -45,7 +45,7 @@
 		<dl{if $errorField == 'languageName'} class="formError"{/if}>
 			<dt>{lang}wcf.global.name{/lang}</dt>
 			<dd>
-				<input type="text" id="languageName" name="languageName" value="{$i18nPlainValues['title']}" required class="long">
+				<input type="text" id="languageName" name="languageName" value="{$i18nPlainValues['languageName']}" required class="long">
 				{include file='multipleLanguageInputJavascript' elementIdentifier='languageName' forceSelection=true}
 				{if $errorField == 'languageName'}
 					<small class="innerError">
