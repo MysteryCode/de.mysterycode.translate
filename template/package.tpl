@@ -48,16 +48,16 @@
 		</dl>
 	{/if}
 	
-	<dl>
-		<dt>{lang}translate.package.variables{/lang}</dt>
-		<dd>{$package->variables}</dd>
-	</dl>
-	
 	{event name='packageInformation'}
 </div>
 
 <div id="translationInformation" class="section">
 	<h2 class="sectionTitle">{lang}translate.package.information.translation{/lang}</h2>
+	
+	<dl>
+		<dt>{lang}translate.package.variables{/lang}</dt>
+		<dd>{$package->variables}</dd>
+	</dl>
 	
 	<dl>
 		<dt>{lang}translate.package.language.completed{/lang}</dt>
