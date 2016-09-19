@@ -18,6 +18,11 @@ class LanguageEditForm extends LanguageAddForm {
 	 */
 	public $languageID = 0;
 	
+	/**
+	 * @inheritDoc
+	 */
+	public $action = 'edit';
+	
 	public function readParameters() {
 		parent::readParameters();
 		

@@ -41,7 +41,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	 * @var	\translate\data\language\Language
 	 */
 	public $sourceLanguage = null;
-	
+
 	/**
 	 * @inheritDoc
 	 */
