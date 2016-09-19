@@ -4,6 +4,13 @@ namespace translate\data\language\item\value;
 use wcf\data\DatabaseObject;
 use wcf\system\WCF;
 
+/**
+ * @property-read	integer		$languageItemValueID		unique id of the translation
+ * @property-read	integer		$languageID		unique id of the language this translation belongs to
+ * @property-read	integer		$languageItemID		unique id of the language item this translation belongs to
+ * @property-read	string		$languageItemValue		translated content of the language item (translation)
+ * @property-read	boolean		$checked			true if the translation has been checked by several users, false if not
+ */
 class LanguageItemValue extends DatabaseObject {
 	/**
 	 * @inheritdoc

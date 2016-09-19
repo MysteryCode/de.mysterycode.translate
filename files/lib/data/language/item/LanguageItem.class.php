@@ -7,6 +7,12 @@ use translate\data\language\LanguageCache;
 use wcf\data\DatabaseObject;
 use wcf\system\WCF;
 
+/**
+ * @property-read	integer		$languageItemID		unique id of the language item
+ * @property-read	string		$languageItem		unique name/identifier the language item
+ * @property-read	integer		$languageCategoryID		unique id of the language category the item belongs to
+ * @property-read	integer		$packageID			unique id of the package the item belongs to
+ */
 class LanguageItem extends DatabaseObject {
 	/**
 	 * @inheritdoc
