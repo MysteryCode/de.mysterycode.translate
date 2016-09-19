@@ -5,6 +5,7 @@ use translate\data\language\Language;
 use translate\system\cache\builder\LanguageCacheBuilder;
 use wcf\data\DatabaseObjectEditor;
 use wcf\data\IEditableCachedObject;
+use wcf\system\WCF;
 
 class LanguageEditor extends DatabaseObjectEditor implements IEditableCachedObject {
 	/**
