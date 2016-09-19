@@ -56,8 +56,6 @@ class LanguageExportAction extends AbstractAction {
 		$languageItemList = new LanguageItemList();
 		$languageItemList->sqlSelects .= $tableAlias . ".languageItemValue";
 		$languageItemList->sqlJoins .= " INNER JOIN " . $tableName . " " . $tableAlias . " ON " . $tableAlias . ".languageItemID = language_item.languageItemID AND " . $tableAlias . ".checked = 1 AND " . $tableAlias . ".languageID = " . $this->languageID;
-		//$languageItemList->getConditionBuilder()->add('language_item.checked = ?', [ 1 ]);
-		//$languageItemList->getConditionBuilder()->add('language_item.languageID = ?', [ $this->languageID ]);
 		$languageItemList->readObjects();
 		
 		foreach ($languageItemList->getObjects() as $languageItem) {
