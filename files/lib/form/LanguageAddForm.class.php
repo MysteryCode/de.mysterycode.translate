@@ -157,7 +157,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		parent::assignVariables();
 		
 		// assign i18n values
-		I18nHandler::getInstance()->assignVariables(!empty($_POST));
+		I18nHandler::getInstance()->assignVariables();
 		
 		WCF::getTPL()->assign([
 			'foreignLanguageName' => $this->foreignLanguageName,

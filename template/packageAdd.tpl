@@ -26,8 +26,6 @@
 
 {include file='header'}
 
-{* {include file='multipleLanguageInputJavascript' elementIdentifier='languageName' forceSelection=true} *}
-
 {include file='formError'}
 
 {if $success|isset}
