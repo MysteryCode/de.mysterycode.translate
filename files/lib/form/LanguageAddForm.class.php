@@ -3,15 +3,15 @@
 namespace translate\form;
 use translate\data\language\Language;
 use translate\data\language\LanguageAction;
+use translate\data\language\LanguageEditor;
 use translate\data\language\LanguageList;
 use wcf\acp\form\LanguageAddForm as ACPLanguageAddForm;
+use wcf\data\package\PackageCache;
 use wcf\form\AbstractForm;
 use wcf\system\exception\UserInputException;
 use wcf\system\language\I18nHandler;
 use wcf\system\language\LanguageFactory;
 use wcf\system\WCF;
-use wcf\data\package\PackageCache;
-use translate\data\language\LanguageEditor;
 
 class LanguageAddForm extends ACPLanguageAddForm {
 	/**
