@@ -14,13 +14,7 @@ class PackageCacheBuilder extends AbstractCacheBuilder {
 			'packages' => []
 		];
 		
-		// get all packages
-		$packageList = new PackageList();
-		$packageList->sqlOrderBy = 'package.packageID ASC';
-		$packageList->readObjects();
-		$data['packages'] = $packageList->getObjects();
-		
-		// set stat columns on languages
+		// set stat columns on packages
 		$sql = "UPDATE translate" . WCF_N . "_package package
 			SET variables = (
 				SELECT COUNT(language_item_value.languageItemValueID)
@@ -42,6 +36,12 @@ class PackageCacheBuilder extends AbstractCacheBuilder {
 			)";
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute([ 1 ]);
+		
+		// get all packages
+		$packageList = new PackageList();
+		$packageList->sqlOrderBy = 'package.packageID ASC';
+		$packageList->readObjects();
+		$data['packages'] = $packageList->getObjects();
 		
 		return $data;
 	}

@@ -14,12 +14,6 @@ class LanguageCacheBuilder extends AbstractCacheBuilder {
 			'languages' => []
 		];
 		
-		// get all languages
-		$languageList = new LanguageList();
-		$languageList->sqlOrderBy = 'language.languageID ASC';
-		$languageList->readObjects();
-		$data['languages'] = $languageList->getObjects();
-		
 		// set stat columns on languages
 		$sql = "UPDATE translate" . WCF_N . "_language language
 			SET variables = (
@@ -34,6 +28,12 @@ class LanguageCacheBuilder extends AbstractCacheBuilder {
 			)";
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute([ 1 ]);
+		
+		// get all languages
+		$languageList = new LanguageList();
+		$languageList->sqlOrderBy = 'language.languageID ASC';
+		$languageList->readObjects();
+		$data['languages'] = $languageList->getObjects();
 		
 		return $data;
 	}
