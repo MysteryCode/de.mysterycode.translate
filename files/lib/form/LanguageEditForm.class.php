@@ -4,7 +4,6 @@ namespace translate\form;
 use translate\data\language\Language;
 use translate\data\language\LanguageAction;
 use translate\data\language\LanguageEditor;
-use wcf\acp\form\LanguageEditForm;
 use wcf\data\package\PackageCache;
 use wcf\form\AbstractForm;
 use wcf\system\exception\IllegalLinkException;
