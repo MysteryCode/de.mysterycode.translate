@@ -18,6 +18,7 @@
 		<item name="translate.package.github"><![CDATA[GitHub Clone-URL]]></item>
 		<item name="translate.package.add"><![CDATA[Paket hinzufügen]]></item>
 		<item name="translate.package.edit"><![CDATA[Paket{if !$package|empty} $package->getTitle(){/if} bearbeiten]]></item>
+		<item name="translate.package.list"><![CDATA[Pakete auflisten]]></item>
 	</category>
 	<category name="translate.package.version">
 		<item name="translate.package.version.number"><![CDATA[Versionsnummer]]></item>
@@ -29,6 +30,7 @@
 		<item name="translate.language.foreignLanguageName"><![CDATA[Name (in Landessprache)]]></item>
 		<item name="translate.language.add"><![CDATA[Sprache hinzufügen]]></item>
 		<item name="translate.language.edit"><![CDATA[Sprache{if !$language|empty} $language->getTitle(){/if} bearbeiten]]></item>
+		<item name="translate.language.list"><![CDATA[Sprachen auflisten]]></item>
 	</category>
 	<category name="translate.language.variable">
 		<item name="translate.language.variable.status.confirmed"><![CDATA[Überprüft]]></item>
