@@ -28,10 +28,23 @@
 		<dd>{$package->descripton}</dd>
 	</dl>
 	
+	{if $package->author}
+		<dl>
+			<dt>{lang}translate.package.github{/lang}</dt>
+			<dd>
+				{if $package->authorUrl}
+					<a href="{$package->authorUrl}" class="externalURL"{if EXTERNAL_LINK_REL_NOFOLLOW || EXTERNAL_LINK_TARGET_BLANK} rel="{if EXTERNAL_LINK_REL_NOFOLLOW}nofollow{/if}{if EXTERNAL_LINK_TARGET_BLANK}{if EXTERNAL_LINK_REL_NOFOLLOW} {/if}noopener noreferrer{/if}"{/if}{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>{$package->author}</a>
+				{else}
+					{$package->author}
+				{/if}
+			</dd>
+		</dl>
+	{/if}
+	
 	{if $package->github}
 		<dl>
 			<dt>{lang}translate.package.github{/lang}</dt>
-			<dd>{$package->github}</dd>
+			<dd><a href="{$package->github}" class="externalURL"{if EXTERNAL_LINK_REL_NOFOLLOW || EXTERNAL_LINK_TARGET_BLANK} rel="{if EXTERNAL_LINK_REL_NOFOLLOW}nofollow{/if}{if EXTERNAL_LINK_TARGET_BLANK}{if EXTERNAL_LINK_REL_NOFOLLOW} {/if}noopener noreferrer{/if}"{/if}{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>{$package->github}</a></dd>
 		</dl>
 	{/if}
 	
@@ -48,7 +61,7 @@
 	
 	<dl>
 		<dt>{lang}translate.package.language.completed{/lang}</dt>
-		<dd>--</dd>
+		<dd>{$package->variablesChecked}</dd>
 	</dl>
 	
 	<dl>
