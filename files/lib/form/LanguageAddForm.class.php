@@ -40,6 +40,11 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	public $sourceLanguage = null;
 	
 	/**
+	 * @inheritDoc
+	 */
+	public $templateNameApplication = 'translate';
+	
+	/**
 	 * @see \wcf\acp\form\LanguageAddForm::readFormParameters()
 	 */
 	public function readFormParameters() {
