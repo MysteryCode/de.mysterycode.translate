@@ -47,6 +47,7 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 			
 			foreach ([
 				'de',
+				'de-informal',
 				'en'
 			] as $langCode) {
 				$languageID = LanguageCache::getInstance()->getLanguageIDByCode($langCode);
@@ -64,6 +65,9 @@ class SyncWCFLanguageItemsCronjob extends AbstractCronjob {
 			'de',
 			'en'
 		] as $languageCode) {
+			if (!file_exists($this->languageFileFolder . $languageCode . '.xml'))
+				continue;
+			
 			$content = file_get_contents($this->languageFileFolder . $languageCode . '.xml');
 			$structure = LanguageFileReaderUtil::parseXML($content);
 			$language = LanguageCache::getInstance()->getLanguageByCode($languageCode);
