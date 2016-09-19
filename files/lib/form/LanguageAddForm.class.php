@@ -88,14 +88,12 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	 * @see \wcf\acp\form\LanguageAddForm::validateSource()
 	 */
 	protected function validateSource() {
-		if (empty($this->sourceLanguageID)) {
-			throw new UserInputException('sourceLanguageID');
-		}
-		
-		// get language
-		$this->sourceLanguage = new Language($this->sourceLanguageID);
-		if (!$this->sourceLanguage->languageID) {
-			throw new UserInputException('sourceLanguageID');
+		if (!empty($this->sourceLanguage)) {
+			// get language
+			$this->sourceLanguage = new Language($this->sourceLanguageID);
+			if (!$this->sourceLanguage->languageID) {
+				throw new UserInputException('sourceLanguageID');
+			}
 		}
 	}
 	
@@ -109,8 +107,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 			'languageName' => $this->languageName,
 			'languageCode' => mb_strtolower($this->languageCode),
 			'countryCode' => mb_strtolower($this->countryCode),
-			'foreignLanguageName' => $this->foreignLanguageName,
-			'sourceLanguageID' => $this->sourceLanguageID
+			'foreignLanguageName' => $this->foreignLanguageName
 		];
 		$this->objectAction = new LanguageAction([], 'create', $languageData);
 		$returnValues = $this->objectAction->executeAction();
@@ -155,7 +152,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		parent::assignVariables();
 		
 		// assign i18n values
-		I18nHandler::getInstance()->assignVariables();
+		I18nHandler::getInstance()->assignVariables(!empty($_POST));
 		
 		WCF::getTPL()->assign([
 			'foreignLanguageName' => $this->foreignLanguageName,
