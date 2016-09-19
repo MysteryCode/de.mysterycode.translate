@@ -11,6 +11,15 @@
 {/capture}
 
 {capture assign='contentHeader'}
+	{if $contentTitle|empty}
+		{if $__wcf->isLandingPage()}
+			{capture assign='contentTitle'}{PAGE_TITLE|language}{/capture}
+			{capture assign='contentDescription'}{PAGE_DESCRIPTION|language}{/capture}
+		{elseif $__wcf->getActivePage() != null && $__wcf->getActivePage()->getTitle()}
+			{capture assign='contentTitle'}{$__wcf->getActivePage()->getTitle()}{/capture}
+		{/if}
+	{/if}
+	
 	<header class="contentHeader">
 		<div class="contentHeaderTitle">
 			<h1 class="contentTitle">{@$contentTitle}</h1>
