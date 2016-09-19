@@ -30,7 +30,7 @@
 	
 	{if $package->author}
 		<dl>
-			<dt>{lang}translate.package.github{/lang}</dt>
+			<dt>{lang}translate.package.author{/lang}</dt>
 			<dd>
 				{if $package->authorUrl}
 					<a href="{$package->authorUrl}" class="externalURL"{if EXTERNAL_LINK_REL_NOFOLLOW || EXTERNAL_LINK_TARGET_BLANK} rel="{if EXTERNAL_LINK_REL_NOFOLLOW}nofollow{/if}{if EXTERNAL_LINK_TARGET_BLANK}{if EXTERNAL_LINK_REL_NOFOLLOW} {/if}noopener noreferrer{/if}"{/if}{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>{$package->author}</a>
@@ -49,7 +49,7 @@
 	{/if}
 	
 	<dl>
-		<dt>{lang}translate.package.veriables{/lang}</dt>
+		<dt>{lang}translate.package.variables{/lang}</dt>
 		<dd>{$package->variables}</dd>
 	</dl>
 	
