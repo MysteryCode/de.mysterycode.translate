@@ -26,14 +26,14 @@
 		<item name="translate.language.variables"><![CDATA[Variables]]></item>
 		<item name="translate.language.variables.checked"><![CDATA[Checked variables]]></item>
 		<item name="translate.language.noLanguageItems"><![CDATA[No language items available.]]></item>
+		<item name="translate.language.foreignLanguageName"><![CDATA[Name (foreign language)]]></item>
+		<item name="translate.language.add"><![CDATA[Add language]]></item>
+		<item name="translate.language.edit"><![CDATA[Edit language{if !$language|empty} $language->getTitle(){/if}]]></item>
 	</category>
 	<category name="translate.language.variable">
 		<item name="translate.language.variable.status.confirmed"><![CDATA[Confirmed]]></item>
 		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Not comfirmed]]></item>
 		<item name="translate.language.variable.status.untranslated"><![CDATA[Not translated]]></item>
-		<item name="translate.language.foreignLanguageName"><![CDATA[Name (foreign language)]]></item>
-		<item name="translate.language.add"><![CDATA[Add language]]></item>
-		<item name="translate.language.edit"><![CDATA[Edit language{if !$language|empty} $language->getTitle(){/if}]]></item>
 	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.translate"><![CDATA[Community Translation Center]]></item>
