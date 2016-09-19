@@ -1,3 +1,20 @@
+{capture assign='contentHeader'}
+	<header class="contentHeader">
+		<div class="contentHeaderTitle">
+			<h1 class="contentTitle">{@$contentTitle}</h1>
+			{if !$contentDescription|empty}<p class="contentHeaderDescription">{@$contentDescription}</p>{/if}
+		</div>
+		
+		<nav class="contentHeaderNavigation">
+			<ul>
+				<li><a href="{link controller='PackageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}translate.package.add{/lang}</span></a></li>
+				
+				{event name='contentHeaderNavigation'}
+			</ul>
+		</nav>
+	</header>
+{/capture}
+
 {capture assign='canonicalURLParameters'}sortField={@$sortField}&sortOrder={@$sortOrder}{/capture}
 
 {capture assign='headContent'}

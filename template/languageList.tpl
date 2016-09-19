@@ -10,6 +10,23 @@
 	<link rel="canonical" href="{link controller='LanguageList' application='translate'}{if $pageNo > 1}pageNo={@$pageNo}&{/if}{@$canonicalURLParameters}{/link}">
 {/capture}
 
+{capture assign='contentHeader'}
+	<header class="contentHeader">
+		<div class="contentHeaderTitle">
+			<h1 class="contentTitle">{@$contentTitle}</h1>
+			{if !$contentDescription|empty}<p class="contentHeaderDescription">{@$contentDescription}</p>{/if}
+		</div>
+		
+		<nav class="contentHeaderNavigation">
+			<ul>
+				<li><a href="{link controller='LanguageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}translate.language.add{/lang}</span></a></li>
+				
+				{event name='contentHeaderNavigation'}
+			</ul>
+		</nav>
+	</header>
+{/capture}
+
 {include file='header'}
 
 {hascontent}
