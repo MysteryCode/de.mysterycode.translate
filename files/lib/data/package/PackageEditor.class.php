@@ -23,13 +23,9 @@ class PackageEditor extends DatabaseObjectEditor implements IEditableCachedObjec
 		// set stat columns on packages
 		$sql = "UPDATE translate" . WCF_N . "_package package
 			SET variables = (
-				SELECT COUNT(language_item_value.languageItemValueID)
-				FROM translate" . WCF_N . "_language_item_value language_item_value
-				WHERE language_item_value.languageItemID IN (
-					SELECT language_item.languageItemID
-					FROM translate" . WCF_N . "_language_item language_item
-					WHERE language_item.packageID = package.packageID
-				)
+				SELECT COUNT(language_item.languageItemID)
+				FROM translate" . WCF_N . "_language_item language_item
+				WHERE language_item.packageID = package.packageID
 			), variablesChecked = (
 				SELECT COUNT(language_item_value2.languageItemValueID)
 				FROM translate" . WCF_N . "_language_item_value language_item_value2
