@@ -47,6 +47,11 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	 */
 	public $templateNameApplication = 'translate';
 	
+	/**
+	 * @inheritDoc
+	 */
+	public $action = 'add';
+	
 	public function readParameters() {
 		parent::readParameters();
 		
@@ -156,7 +161,8 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		
 		WCF::getTPL()->assign([
 			'foreignLanguageName' => $this->foreignLanguageName,
-			'languages' => $this->languages
+			'languages' => $this->languages,
+			'action' => $this->action
 		]);
 	}
 	
