@@ -114,7 +114,7 @@
 		<dl{if $errorField == 'isuniquie'} class="formError"{/if}>
 			<dt>{lang}translate.package.isuniquie{/lang}</dt>
 			<dd>
-				<input type="text" id="isuniquie" name="isuniquie" value="1" {if $application}checked{/if}>
+				<input type="checkbox" id="isuniquie" name="isuniquie" value="1" {if $application}checked{/if}>
 			</dd>
 		</dl>
 		
