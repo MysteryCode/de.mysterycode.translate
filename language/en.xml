@@ -5,6 +5,19 @@
 	</category>
 	<category name="translate.package">
 		<item name="translate.package.language.export"><![CDATA[Export language files of this package]]></item>
+		<item name="translate.package.information"><![CDATA[Packageinformation]]></item>
+		<item name="translate.package.title"><![CDATA[Packagename]]></item>
+		<item name="translate.package.identifier"><![CDATA[Packageidentifier]]></item>
+		<item name="translate.package.description"><![CDATA[Description]]></item>
+		<item name="translate.package.application"><![CDATA[Standalone application]]></item>
+		<item name="translate.package.isuniquie"><![CDATA[One installation only (WCF 1)]]></item>
+		<item name="translate.package.plugin"><![CDATA[Plugin of (WCF 1)]]></item>
+		<item name="translate.package.author"><![CDATA[Author]]></item>
+		<item name="translate.package.authorUrl"><![CDATA[Author's website]]></item>
+		<item name="translate.package.supportUrl"><![CDATA[Supportwebsite]]></item>
+		<item name="translate.package.github"><![CDATA[GitHub Clone-URL]]></item>
+		<item name="translate.package.add"><![CDATA[Add package]]></item>
+		<item name="translate.package.edit"><![CDATA[Edit package{if !$package|empty} $package->getTitle(){/if}]]></item>
 	</category>
 	<category name="translate.package.version">
 		<item name="translate.package.version.number"><![CDATA[Versionnumber]]></item>
@@ -18,6 +31,9 @@
 		<item name="translate.language.variable.status.confirmed"><![CDATA[Confirmed]]></item>
 		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Not comfirmed]]></item>
 		<item name="translate.language.variable.status.untranslated"><![CDATA[Not translated]]></item>
+		<item name="translate.language.foreignLanguageName"><![CDATA[Name (foreign language)]]></item>
+		<item name="translate.language.add"><![CDATA[Add language]]></item>
+		<item name="translate.language.edit"><![CDATA[Edit language{if !$language|empty} $language->getTitle(){/if}]]></item>
 	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.translate"><![CDATA[Community Translation Center]]></item>

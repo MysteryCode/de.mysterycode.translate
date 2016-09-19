@@ -5,6 +5,19 @@
 	</category>
 	<category name="translate.package">
 		<item name="translate.package.language.export"><![CDATA[Sprachdateien dieses Pakets exportieren]]></item>
+		<item name="translate.package.information"><![CDATA[Paketinformationen]]></item>
+		<item name="translate.package.title"><![CDATA[Paketname]]></item>
+		<item name="translate.package.identifier"><![CDATA[Paketbezeichner]]></item>
+		<item name="translate.package.description"><![CDATA[Beschreibung]]></item>
+		<item name="translate.package.application"><![CDATA[Endanwendung]]></item>
+		<item name="translate.package.isuniquie"><![CDATA[Nur eine parallele Installation möglich (WCF 1)]]></item>
+		<item name="translate.package.plugin"><![CDATA[Plugin für (WCF 1)]]></item>
+		<item name="translate.package.author"><![CDATA[Autor]]></item>
+		<item name="translate.package.authorUrl"><![CDATA[Website des Autors]]></item>
+		<item name="translate.package.supportUrl"><![CDATA[Support-Möglichkeit]]></item>
+		<item name="translate.package.github"><![CDATA[GitHub Clone-URL]]></item>
+		<item name="translate.package.add"><![CDATA[Paket hinzufügen]]></item>
+		<item name="translate.package.edit"><![CDATA[Paket{if !$package|empty} $package->getTitle(){/if} bearbeiten]]></item>
 	</category>
 	<category name="translate.package.version">
 		<item name="translate.package.version.number"><![CDATA[Versionsnummer]]></item>
@@ -18,6 +31,9 @@
 		<item name="translate.language.variable.status.confirmed"><![CDATA[Überprüft]]></item>
 		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Nicht überprüft]]></item>
 		<item name="translate.language.variable.status.untranslated"><![CDATA[Nicht übersetzt]]></item>
+		<item name="translate.language.foreignLanguageName"><![CDATA[Name (in Landessprache)]]></item>
+		<item name="translate.language.add"><![CDATA[Sprache hinzufügen]]></item>
+		<item name="translate.language.edit"><![CDATA[Sprache{if !$language|empty} $language->getTitle(){/if} bearbeiten]]></item>
 	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.translate"><![CDATA[Community Translation Center]]></item>
