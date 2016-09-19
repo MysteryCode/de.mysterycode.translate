@@ -80,6 +80,7 @@
 				<dt><label for="sourceLanguageID">{lang}wcf.acp.language.add.source{/lang}</label></dt>
 				<dd>
 					<select id="sourceLanguageID" name="sourceLanguageID">
+							<option value="0"></option>
 						{foreach from=$languages item=language}
 							<option value="{@$language->languageID}"{if $language->languageID == $sourceLanguageID} selected{/if}>{$language->languageName} ({$language->languageCode})</option>
 						{/foreach}
