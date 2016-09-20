@@ -120,11 +120,12 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	public function save() {
 		AbstractForm::save();
 		
-		$languageData = [
-			'languageName' => $this->languageName,
-			'languageCode' => mb_strtolower($this->languageCode),
-			'countryCode' => mb_strtolower($this->countryCode),
-			'foreignLanguageName' => $this->foreignLanguageName
+		$languageData = [ 'data' => [
+				'languageName' => $this->languageName,
+				'languageCode' => mb_strtolower($this->languageCode),
+				'countryCode' => mb_strtolower($this->countryCode),
+				'foreignLanguageName' => $this->foreignLanguageName
+			]
 		];
 		$this->objectAction = new LanguageAction([], 'create', $languageData);
 		$returnValues = $this->objectAction->executeAction();
