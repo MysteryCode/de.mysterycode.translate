@@ -37,6 +37,9 @@
 		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Nicht überprüft]]></item>
 		<item name="translate.language.variable.status.untranslated"><![CDATA[Nicht übersetzt]]></item>
 	</category>
+	<category name="wcf.acp.index">
+		<item name="wcf.acp.index.system.software.translateVersion"><![CDATA[Community Translation Center-Version]]></item>
+	</category>
 	<category name="wcf.acp.option">
 		<item name="wcf.acp.option.category.translate"><![CDATA[Community Translation Center]]></item>
 		<item name="wcf.acp.option.category.translate.general"><![CDATA[Allgemein]]></item>
