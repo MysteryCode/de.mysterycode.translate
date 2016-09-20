@@ -4,6 +4,7 @@ namespace translate\data\language;
 use wcf\data\DatabaseObject;
 use wcf\system\language\LanguageFactory;
 use wcf\system\request\IRouteController;
+use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
 
 /**
@@ -65,9 +66,9 @@ class Language extends DatabaseObject implements IRouteController {
 	 */
 	public function getLink() {
 		return LinkHandler::getInstance()->getLink('Language', [
-				'application' => 'translate',
-				'object' => $this,
-				'forceFrontend' => true
+			'application' => 'translate',
+			'object' => $this,
+			'forceFrontend' => true
 		]);
 	}
 }
