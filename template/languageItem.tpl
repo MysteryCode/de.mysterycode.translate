@@ -31,6 +31,7 @@
 			<dt>{@$translation->getLanguage()->getIconTag()} {$translation->getLanguage()->getTitle()}</dt>
 			<dd>
 				<textarea rows="5" class="long" onclick="this.select()" readonly>{$translation->languageItemValue}</textarea>
+				{assign var='status' value=$languageItem->getTranslationStatus($translation->languageID)}
 				<small>{lang}translate.language.variable.status{/lang}: <span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{else}question{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/lang}"></span></small>
 				
 				{event name='afterTranslation'}
