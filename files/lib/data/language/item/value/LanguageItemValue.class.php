@@ -35,10 +35,7 @@ class LanguageItemValue extends DatabaseObject {
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute([ WCF::getUser()->userID ]);
 		
-		$excludes = [];
-		while ($row = $statement->fetchArray()) {
-			$excludes[] = $row['languageItemValueID'];
-		}
+		$excludes = $statement->fetchAll(\PDO::FETCH_COLUMN);
 		
 		$valueList = new LanguageItemValueList();
 		$valueList->getConditionBuilder()->add('language_item_value.checked <> ?', [ 1 ]);
