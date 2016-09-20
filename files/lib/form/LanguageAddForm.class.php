@@ -124,8 +124,11 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		if (empty($this->languageCode)) {
 			throw new UserInputException('languageCode');
 		}
-		if (LanguageCache::getInstance()->getLanguageByCode($this->languageCode)) {
-			throw new UserInputException('languageCode', 'notUnique');
+		
+		if ($this->action == 'add' || ($this->language !== null && $this->language->languageCode != $this->languageCode)) {
+			if (LanguageCache::getInstance()->getLanguageByCode($this->languageCode)) {
+				throw new UserInputException('languageCode', 'notUnique');
+			}
 		}
 	}
 	
