@@ -72,11 +72,22 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	}
 	
 	/**
-	 * @see \wcf\acp\form\LanguageAddForm::validate()
+	 * @inheritDoc
 	 */
 	public function validate() {
-		parent::validate();
+		AbstractForm::validate();
 		
+		// country code
+		if (empty($this->countryCode))
+			throw new UserInputException('countryCode');
+		
+		// language code
+		$this->validateLanguageCode();
+		
+		// source language id
+		$this->validateSource();
+		
+		// foreign language name
 		if (empty($this->foreignLanguageName))
 			throw new UserInputException('foreignLanguageName');
 		
