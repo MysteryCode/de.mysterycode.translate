@@ -5,6 +5,8 @@ use translate\data\language\category\LanguageCategoryCache;
 use translate\data\language\item\value\LanguageItemValueList;
 use translate\data\language\LanguageCache;
 use wcf\data\DatabaseObject;
+use wcf\system\request\IRouteController;
+use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
 
 /**
@@ -13,7 +15,7 @@ use wcf\system\WCF;
  * @property-read	integer		$languageCategoryID		unique id of the language category the item belongs to
  * @property-read	integer		$packageID			unique id of the package the item belongs to
  */
-class LanguageItem extends DatabaseObject {
+class LanguageItem extends DatabaseObject implements IRouteController {
 	/**
 	 * @inheritdoc
 	 */
@@ -33,6 +35,24 @@ class LanguageItem extends DatabaseObject {
 		parent::__construct($id, $row, $object);
 		
 		$this->getTranslations();
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getTitle() {
+		return  $this->languageItem;
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function getLink() {
+		return  LinkHandler::getInstance()->getLink('LanguageItem', [
+			'application' => 'translate',
+			'object' => $this,
+			'forceFrontend' => true
+		]);
 	}
 	
 	/**
@@ -118,5 +138,14 @@ class LanguageItem extends DatabaseObject {
 			return null;
 		
 		return new self(null, $result);
+	}
+	
+	/**
+	 * returns the package object of the language item of this translation
+	 * 
+	 * @return \translate\data\package\Package
+	 */
+	public function getPackage() {
+		return PackageCache::getInstance()->getPackage($this->packageID);
 	}
 }

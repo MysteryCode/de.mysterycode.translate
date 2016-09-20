@@ -3,6 +3,9 @@
 namespace translate\data\language\item\value;
 use wcf\data\DatabaseObject;
 use wcf\system\WCF;
+use translate\data\language\LanguageCache;
+use translate\data\language\item\LanguageItemCache;
+use translate\data\package\PackageCache;
 
 /**
  * @property-read	integer		$languageItemValueID		unique id of the translation
@@ -45,5 +48,23 @@ class LanguageItemValue extends DatabaseObject {
 		$valueList->sqlLimit = $limit;
 		
 		return $valueList->getObjects();
+	}
+	
+	/**
+	 * Returns the language object of this translation
+	 * 
+	 * @return \translate\data\language\Language
+	 */
+	public function getLanguage() {
+		return LanguageCache::getInstance()->getLanguage($this->languageID);
+	}
+	
+	/**
+	 * Returns the language item object of this translation
+	 * 
+	 * @return \translate\data\language\item\LanguageItem
+	 */
+	public function getLanguageItem() {
+		return LanguageItemCache::getInstance()->getLanguageItem($this->languageItemID);
 	}
 }
