@@ -52,9 +52,6 @@ class LanguageEditForm extends LanguageAddForm {
 		
 		$this->saved();
 		
-		// reset
-		I18nHandler::getInstance()->reset();
-		
 		WCF::getTPL()->assign('success', true);
 	}
 	
