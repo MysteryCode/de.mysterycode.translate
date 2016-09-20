@@ -33,7 +33,7 @@
 			
 			<dl>
 				<dt>{lang}wcf.acp.language.countryCode{/lang}</dt>
-				<dd>{$language->coutryCode}</dd>
+				<dd>{$language->countryCode}</dd>
 			</dl>
 			
 			<dl>
