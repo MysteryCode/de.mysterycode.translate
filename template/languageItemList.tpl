@@ -44,11 +44,9 @@
 							
 							{event name='rowButtons'}
 						</td>
-						<td class="columnID columnLanguageItemID">
-							<a href="{$languageItem->getLink()}">{@$languageItem->languageItemID}</a>
-						</td>
+						<td class="columnID columnLanguageItemID">{@$languageItem->languageItemID}</td>
 						<td class="columnTitle columnLanguageItemName">
-							<a href="{link controller='LanguageItemItemEdit' application='translate' id=$languageItem->languageItemID}{/link}">{$languageItem->languageItem}</a>
+							<a href="{$languageItem->getLink()}">{$languageItem->languageItem}</a>
 							<br>
 							<small>{$languageItem->getCategory()->languageCategory}</small>
 						</td>
