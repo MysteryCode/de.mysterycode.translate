@@ -45,10 +45,10 @@ class LanguageEditForm extends LanguageAddForm {
 			]
 		];
 		$this->objectAction = new LanguageAction([ $this->language ], 'update', $languageData);
-		$returnValues = $this->objectAction->executeAction();
+		$this->objectAction->executeAction();
 		
 		// save i18n values
-		$this->saveI18nValue($returnValues['returnValues'], 'languageName');
+		$this->saveI18nValue($this->language, 'languageName');
 		
 		$this->saved();
 		
