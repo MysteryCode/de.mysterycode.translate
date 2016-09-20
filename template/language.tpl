@@ -53,7 +53,7 @@
 			</dl>
 			
 			<dl>
-				<dt>{lang}translate.language.variablesChecked{/lang}</dt>
+				<dt>{lang}translate.language.variables.checked{/lang}</dt>
 				<dd>{$language->variablesChecked}</dd>
 			</dl>
 			
