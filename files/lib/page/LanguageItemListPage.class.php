@@ -66,12 +66,12 @@ class LanguageItemListPage extends SortablePage {
 		$this->objectList->sqlOrderBy .= ' GROUP BY language_item.languageItem';
 		
 		if ($this->packageID) {
-			$this->objectList->sqlSelects .= "language_item.packageID";
-			$this->objectList->sqlJoins .= " INNER JOIN translate" . WCF_N . "_language_item language_item ON language_item.languageItemID = language_item_value.languageItemID";
 			$this->objectList->getConditionBuilder()->add('language_item.packageID = ?', [ $this->packageID ]);
 		}
 		
 		if ($this->languageID) {
+			$this->objectList->sqlSelects .= "language_item_value.languageID";
+			$this->objectList->sqlJoins .= " INNER JOIN translate" . WCF_N . "_language_item_value language_item_value ON language_item.languageItemID = language_item_value.languageItemID";
 			$this->objectList->getConditionBuilder()->add('language_item_value.languageID = ?', [ $this->languageID ]);
 		}
 	}
