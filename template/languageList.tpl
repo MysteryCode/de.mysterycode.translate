@@ -71,8 +71,20 @@
 						</td>
 						<td class="columnID columnLanguageID">{@$language->languageID}</td>
 						<td class="columnTitle columnLanguageName"><a href="{$language->getLink()}">{$language->getTitle()} <small>({@$language->languageCode})</small></a></td>
-						<td class="columnDigits columnVariables"><a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}{/link}">{#$language->variables}</a></td>
-						<td class="columnDigits columnVariablesChecked"><a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}&checked=1{/link}">{#$language->variablesChecked}</a></td>
+						<td class="columnDigits columnVariables">
+							{if $language->variables}
+								<a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}{/link}">{#$language->variables}</a>
+							{else}
+								$language->variables}
+							{/if}
+						</td>
+						<td class="columnDigits columnVariablesChecked">
+							{if $language->variablesChecked}
+								<a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}&checked=1{/link}">{#$language->variablesChecked}</a>
+							{else}
+								$language->variablesChecked}
+							{/if}
+						</td>
 						
 						{event name='columns'}
 					</tr>
