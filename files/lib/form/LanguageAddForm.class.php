@@ -170,6 +170,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		
 		// reset
 		I18nHandler::getInstance()->reset();
+		$this->languageCode = $this->languageName = $this->foreignLanguageName = $this->countryCode = '';
 		
 		WCF::getTPL()->assign('success', true);
 	}
