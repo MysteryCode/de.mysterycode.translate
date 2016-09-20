@@ -3,12 +3,10 @@
 namespace translate\form;
 use translate\data\language\Language;
 use translate\data\language\LanguageAction;
-use translate\data\language\LanguageEditor;
 use wcf\data\package\PackageCache;
 use wcf\form\AbstractForm;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\language\I18nHandler;
-use wcf\system\language\LanguageFactory;
 use wcf\system\WCF;
 
 class LanguageEditForm extends LanguageAddForm {
@@ -50,17 +48,6 @@ class LanguageEditForm extends LanguageAddForm {
 		
 		// save i18n values
 		$this->saveI18nValue($returnValues['returnValues'], 'languageName');
-		
-		$this->language = LanguageEditor::create([
-			'countryCode' => mb_strtolower($this->countryCode),
-			'languageName' => $this->foreignLanguageName,
-			'languageCode' => mb_strtolower($this->languageCode)
-		]);
-		$languageEditor = new LanguageEditor($this->sourceLanguage->getSystemLanguage());
-		$languageEditor->copy($this->language);
-		
-		LanguageFactory::getInstance()->clearCache();
-		LanguageFactory::getInstance()->deleteLanguageCache();
 		
 		$this->saved();
 		
