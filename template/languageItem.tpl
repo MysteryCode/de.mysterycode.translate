@@ -26,7 +26,7 @@
 <div class="section htmlContent">
 	<h2 class="sectionHeadline">{lang}translate.language.variable.translations{/lang}</h2>
 	
-	{foreach from=$languageItem->getTranslations item=translation}
+	{foreach from=$languageItem->getTranslations() item=translation}
 		<dl>
 			<dt>{@$translation->getLanguage()->getIconTag()} {$translation->getLanguage()->getTitle()}</dt>
 			<dd>
