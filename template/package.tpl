@@ -65,7 +65,7 @@
 	</dl>
 	
 	<dl>
-		<dt>{lang}translate.package.language.inprogress{/lang}</dt>
+		<dt>{lang}translate.package.language.inProgress{/lang}</dt>
 		<dd>--</dd>
 	</dl>
 	
