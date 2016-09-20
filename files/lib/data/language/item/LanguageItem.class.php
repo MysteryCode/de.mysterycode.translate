@@ -4,6 +4,7 @@ namespace translate\data\language\item;
 use translate\data\language\category\LanguageCategoryCache;
 use translate\data\language\item\value\LanguageItemValueList;
 use translate\data\language\LanguageCache;
+use translate\data\package\PackageCache;
 use wcf\data\DatabaseObject;
 use wcf\system\request\IRouteController;
 use wcf\system\request\LinkHandler;
