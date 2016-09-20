@@ -53,4 +53,24 @@ class PackageEditForm extends PackageAddForm {
 		
 		WCF::getTPL()->assign('success', true);
 	}
+	
+	/**
+	 * @see \wcf\acp\form\AbstractForm::readData()
+	 */
+	public function readData() {
+		parent::readData();
+		
+		if (!count($_POST)) {
+			$this->identifier = $this->package->identifier;
+			$this->title = $this->package->title;
+			$this->description = $this->package->description;
+			$this->application = $this->package->application;
+			$this->isunique = $this->package->isunique;
+			$this->plugin = $this->package->plugin;
+			$this->author = $this->package->author;
+			$this->authorUrl = $this->package->authorUrl;
+			$this->supportUrl = $this->package->supportUrl;
+			$this->github = $this->package->github;
+		}
+	}
 }
