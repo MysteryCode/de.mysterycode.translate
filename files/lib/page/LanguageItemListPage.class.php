@@ -3,7 +3,9 @@
 namespace translate\page;
 use translate\data\language\item\LanguageItemList;
 use translate\data\language\LanguageCache;
+use translate\data\package\PackageCache;
 use wcf\page\SortablePage;
+use wcf\system\exception\IllegalLinkException;
 use wcf\system\WCF;
 
 class LanguageItemListPage extends SortablePage {
@@ -23,14 +25,60 @@ class LanguageItemListPage extends SortablePage {
 	public $objectListClassName = LanguageItemList::class;
 	
 	/**
-	 * @see \wcf\page\MultipleLinkPage::initObjectList()
+	 * id of a Package whichs items should be listed
+	 * @var integer
+	 */
+	public $packageID = 0;
+	
+	/**
+	 * id of a Language whichs items should be listed
+	 * @var integer
+	 */
+	public $languageID = 0;
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public function readParameters() {
+		parent::readParameters();
+
+		if (!empty($_REQUEST['packgeID'])) {
+			$this->packageID = intval($_REQUEST['packageID']);
+			$package = PackageCache::getInstance()->getPackage($this->packageID);
+			if ($package === null)
+				throw new IllegalLinkException();
+		}
+		
+		if (!empty($_REQUEST['languageID'])){
+			$this->languageID = intval($_REQUEST['languageID']);
+			$language = LanguageCache::getInstance()->getLanguage($this->languageID);
+			if ($language === null)
+				throw new IllegalLinkException();
+		}
+	}
+	
+	/**
+	 * {@inheritDoc}
 	 */
 	public function initObjectList() {
 		parent::initObjectList();
 		
 		$this->objectList->sqlOrderBy .= ' GROUP BY language_item.languageItem';
+		
+		if ($this->packageID) {
+			$this->objectList->sqlSelects .= "language_item.packageID";
+			$this->objectList->sqlJoins .= " INNER JOIN translate" . WCF_N . "_language_item language_item ON language_item.languageItemID = language_item_value.languageItemID";
+			$this->objectList->getConditionBuilder()->add('language_item.packageID = ?', [ $this->packageID ]);
+		}
+		
+		if ($this->languageID) {
+			$this->objectList->getConditionBuilder()->add('language_item_value.languageID = ?', [ $this->languageID ]);
+		}
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	public function assignVariables() {
 		parent::assignVariables();
 		
