@@ -34,7 +34,7 @@
 	</category>
 	<category name="translate.language.variable">
 		<item name="translate.language.variable.status.confirmed"><![CDATA[Confirmed]]></item>
-		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Not comfirmed]]></item>
+		<item name="translate.language.variable.status.unconfirmed"><![CDATA[Not confirmed]]></item>
 		<item name="translate.language.variable.status.untranslated"><![CDATA[Not translated]]></item>
 	</category>
 	<category name="wcf.acp.index">
