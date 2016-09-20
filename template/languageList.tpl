@@ -70,9 +70,9 @@
 							{event name='rowButtons'}
 						</td>
 						<td class="columnID columnLanguageID">{@$language->languageID}</td>
-						<td class="columnTitle columnLanguageName"><a href="{link controller='LanguageItemList' application='translate' id=$language->languageID}{/link}">{$language->getTitle()} <small>({@$language->languageCode})</small></a></td>
-						<td class="columnDigits columnVariables">{#$language->variables}</td>
-						<td class="columnDigits columnCustomVariables">{#$language->variables}</td>
+						<td class="columnTitle columnLanguageName"><a href="{$language->getLink()}">{$language->getTitle()} <small>({@$language->languageCode})</small></a></td>
+						<td class="columnDigits columnVariables"><a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}{/link}">{#$language->variables}</a></td>
+						<td class="columnDigits columnVariablesChecked"><a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}&checked=1{/link}">{#$language->variablesChecked}</a></td>
 						
 						{event name='columns'}
 					</tr>

@@ -3,6 +3,7 @@
 namespace translate\data\language;
 use wcf\data\DatabaseObject;
 use wcf\system\language\LanguageFactory;
+use wcf\system\request\IRouteController;
 use wcf\system\WCF;
 
 /**
@@ -13,7 +14,7 @@ use wcf\system\WCF;
  * @property-read	string		$countryCode		code of the country using the language according to ISO 3166-1, used to determine the language's country flag
  * @property-read	integer		$isDisabled		is `1` if the language is disabled and thus not selectable, otherwise `0`
  */
-class Language extends DatabaseObject {
+class Language extends DatabaseObject implements IRouteController {
 	/**
 	 * Returns the language name in the user's language
 	 * 
@@ -58,5 +59,15 @@ class Language extends DatabaseObject {
 	 */
 	public function getIconTag() {
 		return '<img class="languageIcon jsTooltip" src="' . $this->getIconPath() . '" title="' . $this->getTitle() . '" alt="' . $this->getTitle() . '" />';
+	}
+	/**
+	 * @inheritDoc
+	 */
+	public function getLink() {
+		return LinkHandler::getInstance()->getLink('Language', [
+				'application' => 'translate',
+				'object' => $this,
+				'forceFrontend' => true
+		]);
 	}
 }
