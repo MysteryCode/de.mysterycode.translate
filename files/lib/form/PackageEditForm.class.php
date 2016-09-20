@@ -15,8 +15,8 @@ class PackageEditForm extends PackageAddForm {
 	/**
 	 * @inheritDoc
 	 */
-	public function readFormParameters() {
-		parent::readFormParameters();
+	public function readParameters() {
+		parent::readParameters();
 
 		if (!empty($_REQUEST['id'])) $this->packageID = intval($_REQUEST['id']);
 		
