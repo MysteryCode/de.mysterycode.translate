@@ -21,8 +21,6 @@
 	
 	<div id="languageInformation" class="hidden tabMenuContent">
 		<section class="section">
-			<h2 class="sectionTitle">{lang}translate.language.information{/lang}</h2>
-			
 			<dl>
 				<dt>{lang}wcf.global.name{/lang}</dt>
 				<dd>{$language->getTitle()}</dd>
@@ -49,8 +47,6 @@
 	
 	<div id="translationInformation" class="hidden tabMenuContent">
 		<section class="section">
-			<h2 class="sectionTitle">{lang}translate.language.information.translation{/lang}</h2>
-			
 			<dl>
 				<dt>{lang}translate.language.variables{/lang}</dt>
 				<dd>{$language->variables}</dd>
@@ -65,10 +61,8 @@
 		</section>
 	</div>
 	
-	<div id="translationInformation" class="hidden tabMenuContent">
+	<div id="languageItemList" class="hidden tabMenuContent">
 		<section class="section">
-			<h2 class="sectionTitle">{lang}translate.language.information.translation{/lang}</h2>
-			
 			TODO: language item list
 		</section>
 	</div>
