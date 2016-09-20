@@ -17,7 +17,7 @@ class LanguageCache extends SingletonFactory {
 	 * language code as key
 	 * languageID as value
 	 * 
-	 * @var interger[]
+	 * @var integer[]
 	 */
 	protected $languageIDs = [];
 	
