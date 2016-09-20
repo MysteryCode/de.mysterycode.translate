@@ -3,9 +3,10 @@
 namespace translate\form;
 use translate\data\language\Language;
 use translate\data\language\LanguageAction;
+use translate\data\language\LanguageEditor;
 use translate\data\language\LanguageList;
 use wcf\acp\form\LanguageAddForm as ACPLanguageAddForm;
-use wcf\data\language\LanguageEditor;
+use wcf\data\language\LanguageEditor as WCFLanguageEditor;
 use wcf\data\package\PackageCache;
 use wcf\form\AbstractForm;
 use wcf\system\exception\UserInputException;
@@ -133,12 +134,12 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		// save i18n values
 		$this->saveI18nValue($returnValues['returnValues'], 'languageName');
 		
-		$this->language = LanguageEditor::create([
+		$this->language = WCFLanguageEditor::create([
 			'countryCode' => mb_strtolower($this->countryCode),
 			'languageName' => $this->foreignLanguageName,
 			'languageCode' => mb_strtolower($this->languageCode)
 		]);
-		$languageEditor = new LanguageEditor($this->sourceLanguage->getSystemLanguage());
+		$languageEditor = new WCFLanguageEditor($this->sourceLanguage->getSystemLanguage());
 		$languageEditor->copy($this->language);
 		
 		LanguageFactory::getInstance()->clearCache();
