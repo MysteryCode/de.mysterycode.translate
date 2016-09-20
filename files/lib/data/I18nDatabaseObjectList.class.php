@@ -35,13 +35,7 @@ abstract class I18nDatabaseObjectList extends DatabaseObjectList {
 				
 				if (is_numeric($key)) {
 					$tmp = explode('.', $value);
-					
-					if (count($tmp) == 2)
-						$key = 'i18n' . $tmp[1];
-					else if (count($tmp) > 2)
-						$key = 'i18n' . $tmp[count($tmp) - 1];
-					else
-						$key = 'i18n' . $value;
+					$key = 'i18n' . $tmp[count($tmp) - 1];
 				}
 				
 				$this->sqlSelects .= "IF (" . $matchTable . ".languageItemValue IS NULL, " . $value . ", " . $matchTable . ".languageItemValue ) AS " . $key;
