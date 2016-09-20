@@ -204,6 +204,13 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	 * @param String $columnName
 	 */
 	public function saveI18nValue(Language $language, $columnName) {
+		$values = I18nHandler::getInstance()->getValues('languageName');
+		foreach ($values as $key => $value) {
+			if (empty($values[$key]))
+				$values[$key] = $this->foreignLanguageName;
+		}
+		I18nHandler::getInstance()->setValues('languageName', $values);
+		
 		if (!I18nHandler::getInstance()->isPlainValue($columnName)) {
 			I18nHandler::getInstance()->save($columnName, 'translate.language.language' . $language->languageID, 'translate.language', PackageCache::getInstance()->getPackageID('de.mysterycode.translate'));
 			
