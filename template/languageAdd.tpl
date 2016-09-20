@@ -85,23 +85,23 @@
 			</dd>
 		</dl>
 		
+		<dl{if $errorField == 'foreignLanguageName'} class="formError"{/if}>
+			<dt>{lang}translate.language.foreignLanguageName{/lang}</dt>
+			<dd>
+				<input type="text" id="foreignLanguageName" name="foreignLanguageName" value="{$foreignLanguageName}" required class="long">
+				{if $errorField == 'foreignLanguageName'}
+					<small class="innerError">
+						{if $errorType == 'empty'}
+							{lang}wcf.global.form.error.empty{/lang}
+						{else}
+							{lang}translate.language.foreignLanguageName.error.notValid{/lang}
+						{/if}
+					</small>
+				{/if}
+			</dd>
+		</dl>
+		
 		{if $action == 'add'}
-			<dl{if $errorField == 'foreignLanguageName'} class="formError"{/if}>
-				<dt>{lang}translate.language.foreignLanguageName{/lang}</dt>
-				<dd>
-					<input type="text" id="foreignLanguageName" name="foreignLanguageName" value="{$foreignLanguageName}" required class="long">
-					{if $errorField == 'foreignLanguageName'}
-						<small class="innerError">
-							{if $errorType == 'empty'}
-								{lang}wcf.global.form.error.empty{/lang}
-							{else}
-								{lang}translate.language.foreignLanguageName.error.notValid{/lang}
-							{/if}
-						</small>
-					{/if}
-				</dd>
-			</dl>
-			
 			<dl{if $errorField == 'sourceLanguageID'} class="formError"{/if}>
 				<dt><label for="sourceLanguageID">{lang}wcf.acp.language.add.source{/lang}</label></dt>
 				<dd>
