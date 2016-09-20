@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com  https://mysterycode.de/XSD/language.xsd" languagecode="de-informal">
 	<category name="translate.index">
-		<item name="translate.index.copyright"><![CDATA[<a href="http://www.mysterycode.de/"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}><strong>Community Translation Center{if SHOW_VERSION_NUMBER} {$__translate->getPackage()->packageVersion}{/if}</strong>, a project by <strong>MysteryCode</strong></a>]]></item>
+		<item name="translate.index.copyright"><![CDATA[<a href="https://www.mysterycode.de/"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}><strong>Community Translation Center{if SHOW_VERSION_NUMBER} {$__translate->getPackage()->packageVersion}{/if}</strong>, a project by <strong>MysteryCode</strong></a>]]></item>
 	</category>
 	<category name="translate.package">
 		<item name="translate.package.language.export"><![CDATA[Export language files of this package]]></item>
