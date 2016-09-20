@@ -5,6 +5,7 @@ use translate\data\language\Language;
 use translate\data\language\LanguageAction;
 use translate\data\language\LanguageEditor;
 use translate\data\language\LanguageList;
+use translate\data\package\PackageEditor;
 use wcf\acp\form\LanguageAddForm as ACPLanguageAddForm;
 use wcf\data\language\LanguageEditor as WCFLanguageEditor;
 use wcf\data\package\PackageCache;
@@ -122,7 +123,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		AbstractForm::save();
 		
 		$languageData = [ 'data' => [
-				'languageName' => $this->languageName,
+				'languageName' => $this->foreignLanguageName,
 				'languageCode' => mb_strtolower($this->languageCode),
 				'countryCode' => mb_strtolower($this->countryCode),
 				'foreignLanguageName' => $this->foreignLanguageName
@@ -134,13 +135,18 @@ class LanguageAddForm extends ACPLanguageAddForm {
 		// save i18n values
 		$this->saveI18nValue($returnValues['returnValues'], 'languageName');
 		
-		$this->language = WCFLanguageEditor::create([
+		$newLanguage = WCFLanguageEditor::create([
 			'countryCode' => mb_strtolower($this->countryCode),
 			'languageName' => $this->foreignLanguageName,
 			'languageCode' => mb_strtolower($this->languageCode)
 		]);
-		$languageEditor = new WCFLanguageEditor($this->sourceLanguage->getSystemLanguage());
-		$languageEditor->copy($this->language);
+		if ($this->sourceLanguage !== null) {
+			$languageEditor = new WCFLanguageEditor($this->sourceLanguage->getSystemLanguage());
+			$languageEditor->copy($newLanguage);
+		}
+		
+		LanguageEditor::resetCache();
+		PackageEditor::resetCache();
 		
 		LanguageFactory::getInstance()->clearCache();
 		LanguageFactory::getInstance()->deleteLanguageCache();
