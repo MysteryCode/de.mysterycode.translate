@@ -145,7 +145,7 @@
 			<dl{if $errorField == 'isunique'} class="formError"{/if}>
 				<dt>{lang}translate.package.isunique{/lang}</dt>
 				<dd>
-					<input type="checkbox" id="isunique" name="isunique" value="1" {if $application}checked{/if}>
+					<input type="checkbox" id="isunique" name="isunique" value="1" {if $isunique}checked{/if}>
 				</dd>
 			</dl>
 			
