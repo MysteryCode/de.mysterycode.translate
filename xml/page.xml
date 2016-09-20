@@ -57,6 +57,26 @@
 				<title>Sprache hinzufügen</title>
 			</content>
 		</page>
+		<page identifier="de.mysterycode.translate.LanguageEdit">
+			<pageType>system</pageType>
+			<controller>translate\form\LanguageEditForm</controller>
+			<name language="de">Sprache bearbeiten</name>
+			<name language="de-informal">Sprache bearbeiten</name>
+			<name language="en">Edit Language</name>
+			<options>translate_enable</options>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.LanguageList</parent>
+			
+			<content language="en">
+				<title>Edit Language</title>
+			</content>
+			<content language="de">
+				<title>Sprache bearbeiten</title>
+			</content>
+			<content language="de-informal">
+				<title>Sprache bearbeiten</title>
+			</content>
+		</page>
 		
 		<page identifier="de.mysterycode.translate.PackageList">
 			<pageType>system</pageType>
@@ -94,6 +114,26 @@
 			</content>
 			<content language="de-informal">
 				<title>Paket hinzufügen</title>
+			</content>
+		</page>
+		<page identifier="de.mysterycode.translate.PackageEdit">
+			<pageType>system</pageType>
+			<controller>translate\form\PackageEditForm</controller>
+			<name language="de">Paket bearbeiten</name>
+			<name language="de-informal">Paket bearbeiten</name>
+			<name language="en">Edit Package</name>
+			<options>translate_enable</options>
+			<hasFixedParent>1</hasFixedParent>
+			<parent>de.mysterycode.translate.PackageList</parent>
+			
+			<content language="en">
+				<title>bearbeiten Package</title>
+			</content>
+			<content language="de">
+				<title>Paket bearbeiten</title>
+			</content>
+			<content language="de-informal">
+				<title>Paket bearbeiten</title>
 			</content>
 		</page>
 		
