@@ -67,4 +67,20 @@ class LanguageItemValue extends DatabaseObject {
 	public function getLanguageItem() {
 		return LanguageItemCache::getInstance()->getLanguageItem($this->languageItemID);
 	}
+	
+	/**
+	 * Get translation status of this translation
+	 * 
+	 * return values:
+	 *      0: translated, but not confirmed
+	 *      1:	translated and confirmed
+	 * 
+	 * @return 0|1
+	 */
+	public function getStatus() {
+		if (!$this->checked)
+			return 0;
+		else
+			return 1;
+	}
 }
