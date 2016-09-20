@@ -43,7 +43,7 @@ class LanguageEditForm extends LanguageAddForm {
 			'countryCode' => mb_strtolower($this->countryCode),
 			'foreignLanguageName' => $this->foreignLanguageName
 		];
-		$this->objectAction = new LanguageAction([], 'update', $languageData);
+		$this->objectAction = new LanguageAction([ $this->language ], 'update', $languageData);
 		$returnValues = $this->objectAction->executeAction();
 		
 		// save i18n values
