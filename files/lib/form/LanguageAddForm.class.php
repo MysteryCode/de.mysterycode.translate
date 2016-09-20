@@ -155,7 +155,8 @@ class LanguageAddForm extends ACPLanguageAddForm {
 			$newLanguage = WCFLanguageEditor::create([
 				'countryCode' => mb_strtolower($this->countryCode),
 				'languageName' => $this->foreignLanguageName,
-				'languageCode' => mb_strtolower($this->languageCode)
+				'languageCode' => mb_strtolower($this->languageCode),
+				'isDisabled' => 1
 			]);
 			if ($this->sourceLanguage !== null) {
 				$languageEditor = new WCFLanguageEditor($this->sourceLanguage->getSystemLanguage());
