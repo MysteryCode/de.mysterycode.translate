@@ -32,7 +32,7 @@
 	<p class="success">{lang}wcf.global.success.{@$action}{/lang}</p>
 {/if}
 
-<form method="post" action="{if $action == 'add'}{link controller='PackageAdd' controller='translate'}{/link}{else}{link controller='PackageEdit' controller='translate' id=$packageID}{/link}{/if}">
+<form method="post" action="{if $action == 'add'}{link controller='PackageAdd' application='translate'}{/link}{else}{link controller='PackageEdit' application='translate' id=$packageID}{/link}{/if}">
 	{event name='beforeSections'}
 	
 	<div id="upload" class="section htmlContent">

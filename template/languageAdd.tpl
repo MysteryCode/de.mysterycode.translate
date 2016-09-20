@@ -32,7 +32,7 @@
 	<p class="success">{lang}wcf.global.success.{@$action}{/lang}</p>
 {/if}
 
-<form method="post" action="{if $action == 'add'}{link controller='LanguageAdd' controller='translate'}{/link}{else}{link controller='LanguageEdit' controller='translate' id=$languageID}{/link}{/if}">
+<form method="post" action="{if $action == 'add'}{link controller='LanguageAdd' application='translate'}{/link}{else}{link controller='LanguageEdit' application='translate' id=$languageID}{/link}{/if}">
 	{event name='beforeSections'}
 	
 	<div class="section htmlContent">
