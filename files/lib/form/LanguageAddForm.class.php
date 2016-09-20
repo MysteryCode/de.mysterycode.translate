@@ -15,6 +15,7 @@ use wcf\system\language\I18nHandler;
 use wcf\system\language\LanguageFactory;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
+use translate\data\language\LanguageCache;
 
 class LanguageAddForm extends ACPLanguageAddForm {
 	/**
@@ -113,6 +114,18 @@ class LanguageAddForm extends ACPLanguageAddForm {
 			if (!$this->sourceLanguage->languageID) {
 				throw new UserInputException('sourceLanguageID');
 			}
+		}
+	}
+	
+	/**
+	 * Validates the language code.
+	 */
+	protected function validateLanguageCode() {
+		if (empty($this->languageCode)) {
+			throw new UserInputException('languageCode');
+		}
+		if (LanguageCache::getInstance()->getLanguageByCode($this->languageCode)) {
+			throw new UserInputException('languageCode', 'notUnique');
 		}
 	}
 	
