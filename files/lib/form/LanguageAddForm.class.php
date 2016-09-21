@@ -26,7 +26,7 @@ class LanguageAddForm extends ACPLanguageAddForm {
 	/**
 	 * @see \wcf\acp\form\AbstractForm::$neededPermissions
 	 */
-	public $neededPermissions = [];
+	public $neededPermissions = [ 'user.translate.language.canAdd' ];
 	
 	/**
 	 * language object

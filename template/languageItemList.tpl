@@ -40,7 +40,7 @@
 				{foreach from=$objects item=languageItem}
 					<tr class="jsLanguageItemRow">
 						<td class="columnIcon">
-							<a href="{link controller='LanguageItemEdit' application='translate' id=$languageItem->languageItemID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>
+							{if $__wcf->session->getPermission('user.translate.language.item.canEdit')}<a href="{link controller='LanguageItemEdit' application='translate' id=$languageItem->languageItemID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>{/if}
 							
 							{event name='rowButtons'}
 						</td>
@@ -75,7 +75,6 @@
 	{hascontent}
 		<nav class="contentFooterNavigation">
 			<ul>
-				<li><a href="{link controller='LanguageItemAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}wcf.acp.languageItem.add{/lang}</span></a></li>
 				{content}{event name='contentFooterNavigation'}{/content}
 			</ul>
 		</nav>
@@ -85,8 +84,7 @@
 <script data-relocate="true">
 	//<![CDATA[
 	$(function() {
-		new WCF.Action.Delete('translate\\data\\language\\item\\LanguageItemAction', '.jsLanguageItemRow');
-		new WCF.Action.Toggle('translate\\data\\language\\item\\LanguageItemAction', $('.jsLanguageItemRow'));
+		{if $__wcf->session->getPermission('mod.translate.language.item.canDelete')}new WCF.Action.Delete('translate\\data\\language\\item\\LanguageItemAction', '.jsLanguageItemRow');{/if}
 	});
 	//]]>
 </script>

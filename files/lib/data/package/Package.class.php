@@ -2,8 +2,8 @@
 
 namespace translate\data\package;
 use translate\data\package\version\PackageVersionList;
-use wcf\data\package\Package as WCFPackage;
 use wcf\data\DatabaseObject;
+use wcf\data\package\Package as WCFPackage;
 use wcf\system\request\IRouteController;
 use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
@@ -55,5 +55,29 @@ class Package extends DatabaseObject implements IRouteController {
 			'object' => $this,
 			'forceFrontend' => true
 		]);
+	}
+	
+	public function canEdit() {
+		if (WCF::getSession()->getPermission('user.translate.package.canEditOwn') && $this->userID == WCF::getUser()->userID)
+			return true;
+		
+		if (WCF::getSession()->getPermission('mod.translate.package.canEdit'))
+			return true;
+		
+// 		EventHandler::getInstance()->fireAction($this, 'canEdit');
+		
+		return false;
+	}
+	
+	public function canDelete() {
+		if (WCF::getSession()->getPermission('user.translate.package.canDeleteOwn') && $this->userID == WCF::getUser()->userID)
+			return true;
+		
+		if (WCF::getSession()->getPermission('mod.translate.package.canDelete'))
+			return true;
+		
+// 		EventHandler::getInstance()->fireAction($this, 'canDelete');
+		
+		return false;
 	}
 }

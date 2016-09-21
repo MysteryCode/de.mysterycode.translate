@@ -16,7 +16,7 @@
 		
 		<nav class="contentHeaderNavigation">
 			<ul>
-				<li><a href="{link controller='PackageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}translate.package.add{/lang}</span></a></li>
+				{if $__wcf->session->getPermission('user.translate.package.canAdd')}<li><a href="{link controller='PackageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}translate.package.add{/lang}</span></a></li>{/if}
 				
 				{event name='contentHeaderNavigation'}
 			</ul>
@@ -66,7 +66,7 @@
 					<tr class="jsPackageRow">
 						<td class="columnIcon">
 							<a href="{link controller='PackageExport' application='translate' id=$package->packageID}{/link}" title="{lang}translate.package.language.export{/lang}" class="jsTooltip"><span class="icon icon16 fa-download"></span></a>
-							<a href="{link controller='PackageEdit' application='translate' id=$package->packageID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>
+							{if $package->canEdit()}<a href="{link controller='PackageEdit' application='translate' id=$package->packageID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>{/if}
 							
 							{event name='rowButtons'}
 						</td>
@@ -108,7 +108,6 @@
 	{hascontent}
 		<nav class="contentFooterNavigation">
 			<ul>
-				<li><a href="{link controller='PackageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}wcf.acp.package.add{/lang}</span></a></li>
 				{content}{event name='contentFooterNavigation'}{/content}
 			</ul>
 		</nav>
@@ -118,8 +117,7 @@
 <script data-relocate="true">
 	//<![CDATA[
 	$(function() {
-		new WCF.Action.Delete('translate\\data\\package\\PackageAction', '.jsPackageRow');
-		new WCF.Action.Toggle('translate\\data\\package\\PackageAction', $('.jsPackageRow'));
+		{if $__wcf->session->getPermission('mod.translate.package.canDelete')}new WCF.Action.Delete('translate\\data\\package\\PackageAction', '.jsPackageRow');{/if}
 	});
 	//]]>
 </script>

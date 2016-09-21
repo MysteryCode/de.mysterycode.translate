@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com https://mysterycode.de/XSD/userGroupOption.xsd">
+	<import>
+		<categories>
+			<category name="user.translate">
+				<parent>user</parent>
+			</category>
+			<category name="user.translate.language">
+				<parent>user.translate</parent>
+			</category>
+			<category name="user.translate.language.item">
+				<parent>user.translate</parent>
+			</category>
+			<category name="user.translate.package">
+				<parent>user.translate</parent>
+			</category>
+			
+			<category name="mod.translate">
+				<parent>mod</parent>
+			</category>
+			<category name="mod.translate.language">
+				<parent>mod.translate</parent>
+			</category>
+			<category name="mod.translate.language.item">
+				<parent>mod.translate</parent>
+			</category>
+			<category name="mod.translate.package">
+				<parent>mod.translate</parent>
+			</category>
+		</categories>
+		
+		<options>
+			<option name="user.translate.language.canAdd">
+				<categoryname>user.translate.language</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+			</option>
+			<option name="user.translate.language.canEdit">
+				<categoryname>user.translate.language</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>0</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.language.item.canTranslate">
+				<categoryname>user.translate.language</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.language.item.canCheck">
+				<categoryname>user.translate.language</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			
+			<option name="user.translate.package.canAdd">
+				<categoryname>user.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.package.canEditOwn">
+				<categoryname>user.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.package.canDeleteOwn">
+				<categoryname>user.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.package.canUploadArchive">
+				<categoryname>user.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.package.canUploadXML">
+				<categoryname>user.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			
+			
+			<option name="mod.translate.language.canDelete">
+				<categoryname>mod.translate.language</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>0</userdefaultvalue>
+				<moddefaultvalue>1</moddefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="user.translate.language.item.canDelete">
+				<categoryname>mod.translate.language.item</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>0</userdefaultvalue>
+				<moddefaultvalue>1</moddefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="mod.translate.package.canEdit">
+				<categoryname>mod.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>0</userdefaultvalue>
+				<moddefaultvalue>1</moddefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+			<option name="mod.translate.package.canDelete">
+				<categoryname>mod.translate.package</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+				<userdefaultvalue>0</userdefaultvalue>
+				<moddefaultvalue>1</moddefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<usersonly>1</usersonly>
+			</option>
+		</options>
+	</import>
+</data>

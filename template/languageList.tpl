@@ -28,7 +28,7 @@
 		
 		<nav class="contentHeaderNavigation">
 			<ul>
-				<li><a href="{link controller='LanguageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}translate.language.add{/lang}</span></a></li>
+				{if $__wcf->session->getPermission('user.translate.language.canAdd')}<li><a href="{link controller='LanguageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}translate.language.add{/lang}</span></a></li>{/if}
 				
 				{event name='contentHeaderNavigation'}
 			</ul>
@@ -65,7 +65,7 @@
 					<tr class="jsLanguageRow">
 						<td class="columnIcon">
 							<a href="{link controller='LanguageExport' application='translate' id=$language->languageID}{/link}" title="{lang}wcf.acp.language.export{/lang}" class="jsTooltip"><span class="icon icon16 fa-download"></span></a>
-							<a href="{link controller='LanguageEdit' application='translate' id=$language->languageID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>
+							{if $__wcf->session->getPermission('user.translate.language.canEdit')}<a href="{link controller='LanguageEdit' application='translate' id=$language->languageID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip"><span class="icon icon16 fa-pencil"></span></a>{/if}
 							
 							{event name='rowButtons'}
 						</td>
@@ -106,7 +106,6 @@
 	{hascontent}
 		<nav class="contentFooterNavigation">
 			<ul>
-				<li><a href="{link controller='LanguageAdd' application='translate'}{/link}" class="button"><span class="icon icon16 fa-plus"></span> <span>{lang}wcf.acp.language.add{/lang}</span></a></li>
 				{content}{event name='contentFooterNavigation'}{/content}
 			</ul>
 		</nav>
@@ -116,8 +115,7 @@
 <script data-relocate="true">
 	//<![CDATA[
 	$(function() {
-		new WCF.Action.Delete('translate\\data\\language\\LanguageAction', '.jsLanguageRow');
-		new WCF.Action.Toggle('translate\\data\\language\\LanguageAction', $('.jsLanguageRow'));
+		{if $__wcf->session->getPermission('mod.translate.language.canDelete')}new WCF.Action.Delete('translate\\data\\language\\LanguageAction', '.jsLanguageRow');{/if}
 	});
 	//]]>
 </script>

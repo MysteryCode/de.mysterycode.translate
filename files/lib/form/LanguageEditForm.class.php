@@ -11,6 +11,11 @@ use wcf\system\WCF;
 
 class LanguageEditForm extends LanguageAddForm {
 	/**
+	 * @see \wcf\acp\form\AbstractForm::$neededPermissions
+	 */
+	public $neededPermissions = [ 'user.translate.language.canEdit' ];
+	
+	/**
 	 * language id
 	 * @var	integer
 	 */

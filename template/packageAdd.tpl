@@ -35,53 +35,55 @@
 <form method="post" action="{if $action == 'add'}{link controller='PackageAdd' application='translate'}{/link}{else}{link controller='PackageEdit' application='translate' id=$packageID}{/link}{/if}">
 	{event name='beforeSections'}
 	
-	<div id="upload" class="section htmlContent">
-		<fieldset>
-			<legend>{lang}translate.package.upload{/lang}</legend>
-			
-			TODO: upload container
-			{*
-			<div{if !$fileHandler->getFileList()|count} style="display: none"{/if}>
-				<ul class="formAttachmentList mcpsFormPackageFileList clearfix">
-					{foreach from=$fileHandler->getFileList() item='file'}
-						<li class="box48" data-object-id="{@$file->fileID}">
-							<span class="icon icon48 icon-upload-alt"></span>
-								
-							<div>
+	{if $__wcf->session->getPermission('user.translate.package.canUploadArchive') || $__wcf->session->getPermission('user.translate.package.canUploadXML')}
+		<div id="upload" class="section htmlContent">
+			<fieldset>
+				<legend>{lang}translate.package.upload{/lang}</legend>
+				
+				TODO: upload container
+				{*
+				<div{if !$fileHandler->getFileList()|count} style="display: none"{/if}>
+					<ul class="formAttachmentList mcpsFormPackageFileList clearfix">
+						{foreach from=$fileHandler->getFileList() item='file'}
+							<li class="box48" data-object-id="{@$file->fileID}">
+								<span class="icon icon48 icon-upload-alt"></span>
+									
 								<div>
-									<p>
-										{$file->filename} ({$file->version})
+									<div>
+										<p>
+											{$file->filename} ({$file->version})
 										</p>
-									<small>{@$file->filesize|filesize}</small>
-								</div>
-								
-								<ul>
-									<li><span class="icon icon16 icon-remove pointer jsTooltip jsDeleteButton " title="{lang}wcf.global.button.delete{/lang}" data-object-id="{@$file->fileID}" data-confirm-message="{lang}mcps.package.file.delete.sure{/lang}"></span></li>
+										<small>{@$file->filesize|filesize}</small>
+									</div>
+									
+									<ul>
+										<li><span class="icon icon16 icon-remove pointer jsTooltip jsDeleteButton " title="{lang}wcf.global.button.delete{/lang}" data-object-id="{@$file->fileID}" data-confirm-message="{lang}mcps.package.file.delete.sure{/lang}"></span></li>
 									</ul>
-							</div>
-						</li>
-					{/foreach}
-				</ul>
-			</div>
-			
-			<dl id="fileUploadContainer" class="wide">
-				<dd>
-					<div data-max-size="{@$fileHandler->getMaxSize()}"></div>
+								</div>
+							</li>
+						{/foreach}
+					</ul>
+				</div>
+				
+				<dl id="fileUploadContainer" class="wide">
+					<dd>
+						<div data-max-size="{@$fileHandler->getMaxSize()}"></div>
 						{if $errorField == 'upload'}
-						<small class="innerError">
-							{if $errorType == 'empty'}
-								{lang}wcf.global.form.error.empty{/lang}
-							{else}
-								{lang}wcf.user.username.error.{@$errorType}{/lang}
-							{/if}
-						</small>
-					{/if}
-					<small>{lang}mcps.acp.package.file.upload.limits{/lang}</small>
-				</dd>
-			</dl>
-			*}
-		</fieldset>
-	</div>
+							<small class="innerError">
+								{if $errorType == 'empty'}
+									{lang}wcf.global.form.error.empty{/lang}
+								{else}
+									{lang}wcf.user.username.error.{@$errorType}{/lang}
+								{/if}
+							</small>
+						{/if}
+						<small>{lang}mcps.acp.package.file.upload.limits{/lang}</small>
+					</dd>
+				</dl>
+				*}
+			</fieldset>
+		</div>
+	{/if}
 	
 	<div class="section htmlContent">
 		<fieldset>

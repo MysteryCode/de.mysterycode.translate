@@ -49,7 +49,7 @@
 		<instruction type="menuItem">xml/menuItem.xml</instruction>
 		<instruction type="option">xml/option.xml</instruction>
 		<instruction type="templateListener">xml/templateListener.xml</instruction>
-		<!-- <instruction type="userGroupOption">xml/userGroupOption.xml</instruction> -->
+		<instruction type="userGroupOption">xml/userGroupOption.xml</instruction>
 		<!-- <instruction type="userNotificationEvent">xml/userNotificationEvent.xml</instruction> -->
 		<instruction type="userOption">xml/userOption.xml</instruction>
 		

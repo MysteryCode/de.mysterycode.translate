@@ -4,9 +4,16 @@ namespace translate\form;
 use translate\data\package\PackageAction;
 use translate\data\package\PackageCache;
 use wcf\system\exception\IllegalLinkException;
+use wcf\system\exception\PermissionDeniedException;
 use wcf\system\WCF;
 
 class PackageEditForm extends PackageAddForm {
+	
+	/**
+	 * @see \wcf\acp\form\AbstractForm::$neededPermissions
+	 */
+	public $neededPermissions = [];
+	
 	/**
 	 * @inheritDoc
 	 */
@@ -23,6 +30,16 @@ class PackageEditForm extends PackageAddForm {
 		$this->package = PackageCache::getInstance()->getPackage($this->packageID);
 		if ($this->package === null)
 			throw new IllegalLinkException();
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function checkPermissions() {
+		parent::checkPermissions();
+		
+		if (!$this->package->canEdit())
+			throw new PermissionDeniedException();
 	}
 	
 	/**

@@ -16,7 +16,7 @@ class PackageAddForm extends AbstractForm {
 	/**
 	 * @see \wcf\acp\form\AbstractForm::$neededPermissions
 	 */
-	public $neededPermissions = [];
+	public $neededPermissions = [ 'user.translate.package.canAdd' ];
 	
 	/**
 	 * package object
