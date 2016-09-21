@@ -72,6 +72,22 @@ class LanguageCache extends SingletonFactory {
 		return $languageList;
 			
 	}
+
+	/**
+	 * Returns a list of ids of all accessible languages.
+	 *
+	 * @return \translate\data\language\Language[]
+	 */
+	public function getAccessibleLanguageIDs () {
+		$languageList = $this->getAccessibleLanguages();
+		$accessibleIDs = [];
+		foreach ($languageList as $language) {
+			$accessibleIDs[] = $language->languageID;
+		}
+		
+		return $accessibleIDs;
+			
+	}
 	
 	/**
 	 * Returns the if of the language matching the given languageCode
