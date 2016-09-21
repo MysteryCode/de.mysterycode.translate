@@ -85,8 +85,20 @@
 							{/if}
 						</td>
 						<td class="columnText columnPackageVersion">{$package->getCurrentVersion()->version}</td>
-						<td class="columnDigits columnVariables">{#$package->variables}</td>
-						<td class="columnDigits columnCustomVariables">{#$package->variablesChecked}</td>
+						<td class="columnDigits columnVariables">
+							{if $package->variables}
+								<a href="{link controller='LanguageItemList' application='translate'}packageID={$package->packageID}{/link}">{#$package->variables}</a>
+							{else}
+								{#$package->variables}
+							{/if}
+						</td>
+						<td class="columnDigits columnCustomVariables">
+							{if $package->variablesChecked}
+								<a href="{link controller='LanguageItemList' application='translate'}packageID={$package->packageID}&checked=1{/link}">{#$package->variablesChecked}</a>
+							{else}
+								{#$package->variablesChecked}
+							{/if}
+						</td>
 						
 						{event name='columns'}
 					</tr>

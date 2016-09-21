@@ -75,14 +75,14 @@
 							{if $language->variables}
 								<a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}{/link}">{#$language->variables}</a>
 							{else}
-								{$language->variables}
+								{#$language->variables}
 							{/if}
 						</td>
 						<td class="columnDigits columnVariablesChecked">
 							{if $language->variablesChecked}
 								<a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}&checked=1{/link}">{#$language->variablesChecked}</a>
 							{else}
-								{$language->variablesChecked}
+								{#$language->variablesChecked}
 							{/if}
 						</td>
 						
