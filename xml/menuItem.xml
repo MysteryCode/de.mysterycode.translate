@@ -48,7 +48,7 @@
 		
 		<item identifier="de.mysterycode.translate.TranslationStart">
 			<menu>com.woltlab.wcf.MainMenu</menu>
-			<page>de.mysterycode.translate.TranslationStartpage</page>
+			<page>de.mysterycode.translate.TranslationStart</page>
 			<title language="de">Übersetzung</title>
 			<title language="de-informal">Übersetzung</title>
 			<title language="en">Translation</title>
