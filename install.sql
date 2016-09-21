@@ -13,6 +13,8 @@ CREATE TABLE translate1_package (
 	github						VARCHAR(255),
 	variables					INT(10)			NOT NULL	DEFAULT 0,
 	variablesChecked			INT(10)			NOT NULL	DEFAULT 0,
+	userID						INT(10),
+	username					VARCHAR(255)	NOT NULL	DEFAULT '',
 	PRIMARY KEY (packageID),
 	KEY (identifier)
 );
@@ -89,6 +91,8 @@ CREATE TABLE translate1_language_item_check (
 	ipAddress					VARCHAR(39)		NOT NULL	DEFAULT '',
 	UNIQUE KEY languageItem (username, languageItemID)
 );
+
+ALTER TABLE translate1_package ADD FOREIGN KEY (userID) REFERENCES wcf1_user (userID) ON DELETE SET NULL;
 
 ALTER TABLE translate1_package_version ADD FOREIGN KEY (packageID) REFERENCES translate1_package (packageID) ON DELETE CASCADE;
 ALTER TABLE translate1_package_version ADD FOREIGN KEY (userID) REFERENCES wcf1_user (userID) ON DELETE SET NULL;
