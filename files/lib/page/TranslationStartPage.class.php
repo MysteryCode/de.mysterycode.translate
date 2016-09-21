@@ -29,7 +29,7 @@ class TranslationStartPage extends AbstractPage {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign([
-			'availableLanguages' => $this->availableLanguages,
+			'availableLanguages' => $this->languageList,
 			'packageList' => $this->packageList
 		]);
 	}
