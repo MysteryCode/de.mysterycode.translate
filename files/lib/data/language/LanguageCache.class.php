@@ -54,6 +54,22 @@ class LanguageCache extends SingletonFactory {
 	public function getLanguages () {
 		return $this->cachedObjects;
 	}
+
+	/**
+	 * Returns a list of all accessible languages.
+	 *
+	 * @return \translate\data\language\Language[]
+	 */
+	public function getAccessibleLanguages () {
+		$languageList = [];
+		foreach ($this->cachedObjects as $language) {
+			if (!in_array($language->languageCode, WCF::getUser()->getUserOption('translateExcludedLanguages')))
+				$languageList[] = $language;
+		}
+		
+		return $languageList;
+			
+	}
 	
 	/**
 	 * Returns the if of the language matching the given languageCode
