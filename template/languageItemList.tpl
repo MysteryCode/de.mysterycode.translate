@@ -1,4 +1,4 @@
-{capture assign='canonicalURLParameters'}sortField={@$sortField}&sortOrder={@$sortOrder}{/capture}
+{capture assign='canonicalURLParameters'}sortField={@$sortField}&sortOrder={@$sortOrder}{if $packageID}&packageID={$packageID}{/if}{if $languageID}&languageID={$languageID}{/if}{/capture}
 
 {capture assign='headContent'}
 	{if $pageNo < $pages}
@@ -15,7 +15,7 @@
 {hascontent}
 	<div class="paginationTop">
 		{content}
-			{pages print=true assign=pagesLinks controller='LanguageItemList' application='translate' link="pageNo=%d&sortField=$sortField&sortOrder=$sortOrder"}
+			{pages print=true assign=pagesLinks controller='LanguageItemList' application='translate' link="pageNo=%d&$canonicalURLParameters"}
 		{/content}
 	</div>
 {/hascontent}
@@ -25,11 +25,13 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th class="columnID columnLanguageItemID{if $sortField == 'languageItemID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='LanguageItemList' application='translate'}pageNo={@$pageNo}&sortField=languageItemID&sortOrder={if $sortField == 'languageItemID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.objectID{/lang}</a></th>
-					<th class="columnTitle columnLanguageItemName{if $sortField == 'languageItemName'} active {@$sortOrder}{/if}"><a href="{link controller='LanguageItemList' application='translate'}pageNo={@$pageNo}&sortField=languageItemName&sortOrder={if $sortField == 'languageItemName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.name{/lang}</a></th>
+					<th class="columnID columnLanguageItemID{if $sortField == 'languageItemID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='LanguageItemList' application='translate'}pageNo={@$pageNo}&sortField=languageItemID&sortOrder={if $sortField == 'languageItemID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{if $packageID}&packageID={$packageID}{/if}{if $languageID}&languageID={$languageID}{/if}{/link}">{lang}wcf.global.objectID{/lang}</a></th>
+					<th class="columnTitle columnLanguageItemName{if $sortField == 'languageItemName'} active {@$sortOrder}{/if}"><a href="{link controller='LanguageItemList' application='translate'}pageNo={@$pageNo}&sortField=languageItemName&sortOrder={if $sortField == 'languageItemName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{if $packageID}&packageID={$packageID}{/if}{if $languageID}&languageID={$languageID}{/if}{/link}">{lang}wcf.global.name{/lang}</a></th>
 					
 					{foreach from=$availableLanguages item=language}
-						<th class="columnIcon columnStatus">{@$language->getIconTag()}</th>
+						{if !$languageID || $languageID = $language->languageID}
+							<th class="columnIcon columnStatus">{@$language->getIconTag()}</th>
+						{/if}
 					{/foreach}
 					
 					{event name='columnHeads'}
@@ -52,7 +54,9 @@
 						</td>
 						
 						{foreach from=$languageItem->getTranslationStatus() item=$status}
-							<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{else}question{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/lang}"></span></td>
+							{if !$languageID || $languageID = $language->languageID}
+								<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{else}question{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/lang}"></span></td>
+							{/if}
 						{/foreach}
 						
 						{event name='columns'}

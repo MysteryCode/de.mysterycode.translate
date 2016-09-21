@@ -42,7 +42,7 @@ class LanguageItemListPage extends SortablePage {
 	public function readParameters() {
 		parent::readParameters();
 
-		if (!empty($_REQUEST['packgeID'])) {
+		if (!empty($_REQUEST['packageID'])) {
 			$this->packageID = intval($_REQUEST['packageID']);
 			$package = PackageCache::getInstance()->getPackage($this->packageID);
 			if ($package === null)
@@ -71,7 +71,7 @@ class LanguageItemListPage extends SortablePage {
 		
 		if ($this->languageID) {
 			$this->objectList->sqlSelects .= "language_item_value.languageID";
-			$this->objectList->sqlJoins .= " INNER JOIN translate" . WCF_N . "_language_item_value language_item_value ON language_item.languageItemID = language_item_value.languageItemID";
+			$this->objectList->sqlJoins = $this->objectList->sqlConditionJoins .= " INNER JOIN translate" . WCF_N . "_language_item_value language_item_value ON language_item.languageItemID = language_item_value.languageItemID";
 			$this->objectList->getConditionBuilder()->add('language_item_value.languageID = ?', [ $this->languageID ]);
 		}
 	}
@@ -83,7 +83,9 @@ class LanguageItemListPage extends SortablePage {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign([
-			'availableLanguages' => LanguageCache::getInstance()->getLanguages()
+			'availableLanguages' => LanguageCache::getInstance()->getLanguages(),
+			'packageID' => $this->packageID,
+			'languageID' => $this->languageID
 		]);
 	}
 }
