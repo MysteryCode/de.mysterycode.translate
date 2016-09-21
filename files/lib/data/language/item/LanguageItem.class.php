@@ -2,6 +2,7 @@
 
 namespace translate\data\language\item;
 use translate\data\language\category\LanguageCategoryCache;
+use translate\data\language\item\value\LanguageItemValue;
 use translate\data\language\item\value\LanguageItemValueList;
 use translate\data\language\LanguageCache;
 use translate\data\package\PackageCache;
@@ -148,5 +149,30 @@ class LanguageItem extends DatabaseObject implements IRouteController {
 	 */
 	public function getPackage() {
 		return PackageCache::getInstance()->getPackage($this->packageID);
+	}
+	
+	/**
+	 * Returns the value of the language item in the language chosen
+	 * by the user as (secondary) origin
+	 * 
+	 * @param boolean $secondary
+	 * @return string
+	 */
+	public function getSourceValue($secondary = false) {
+		if (!$secondary)
+			$languageID = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguage'));
+		else if (WCF::getUser()->getUserOption('originLanguageSecondary'))
+			$languageID = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguageSecondary'));
+		else
+			$languageID = 0;
+		
+		$sql = "SELECT language_item_value.value
+			FROM " . LanguageItemValue::getDatabaseTableName() . " language_item_value
+			WHERE language_item_value.languageID = ?
+				AND language_item_value.languageItemID = ?";
+		$statement = WCF::getDB()->prepareStatement($sql);
+		$statement->execute([ $languageID, $this->languageItemID ]);
+		
+		return $statement->fetchSingleRow();
 	}
 }
