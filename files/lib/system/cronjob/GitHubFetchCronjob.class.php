@@ -14,7 +14,7 @@ class GitHubFetchCronjob extends AbstractCronjob {
 		parent::execute($cronjob);
 		
 		$packageList = new PackageList();
-		$packageList->getConditionBuilder()->add('github IS NOT NULL');
+		$packageList->getConditionBuilder()->add('package.github IS NOT NULL');
 		$packageList->readObjects();
 		$packages = $packageList->getObjects();
 		
@@ -27,7 +27,8 @@ class GitHubFetchCronjob extends AbstractCronjob {
 				$url = $package->github . 'languages/' . $language->lsnguageCode . '.xml';
 				$request = new HTTPRequest($url);
 				try {
-					$reply = $request->getReply();
+// 					$request->execute();
+// 					$reply = $request->getReply();
 				}
 				catch (SystemException $e) {
 					//TODO
