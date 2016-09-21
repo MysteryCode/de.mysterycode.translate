@@ -46,6 +46,11 @@
 		<item name="wcf.acp.option.translate_comment_enable"><![CDATA[Kommentare bei Übersetzungen aktivieren]]></item>
 		<item name="wcf.acp.option.translate_safeafterchecks"><![CDATA[Check-Hürde für Export]]></item>
 	</category>
+	<category name="wcf.search">
+		<item name="wcf.search.type.de.mysterycode.translate.package"><![CDATA[Pakete]]></item>
+		<item name="wcf.search.type.de.mysterycode.translate.language"><![CDATA[Sprachen]]></item>
+		<item name="wcf.search.type.de.mysterycode.translate.language.item"><![CDATA[Sprachvariablen]]></item>
+	</category>
 	<category name="wcf.user.option">
 		<item name="wcf.user.option.category.settings.translate"><![CDATA[Community Translation Center]]></item>
 		<item name="wcf.user.option.category.settings.translate.general"><![CDATA[Allgemein]]></item>
