@@ -31,7 +31,7 @@
 		</div>
 		
 		<div class="formSubmit">
-			<input type="submit" name="submit" value="{lang}translate.translate.start{/lang}" accesskey="s">
+			<a id="submit" name="submit" class="button disabled">{lang}translate.translate.start{/lang}</a>
 		</div>
 	</form>
 </div>
