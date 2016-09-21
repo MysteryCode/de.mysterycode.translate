@@ -15,6 +15,14 @@
 			<title language="de-informal">Alle Sprachen</title>
 			<title language="en">All Languages</title>
 		</item>
+		<item identifier="de.mysterycode.translate.LanguageAdd">
+			<parent>de.mysterycode.translate.LanguageList</parent>
+			<page>de.mysterycode.translate.LanguageAdd</page>
+			<title language="de">Sprache hinzufügen</title>
+			<title language="de-informal">Sprache hinzufügen</title>
+			<title language="en">Add Language</title>
+		</item>
+		
 		<item identifier="de.mysterycode.translate.PackageList">
 			<menu>com.woltlab.wcf.MainMenu</menu>
 			<page>de.mysterycode.translate.PackageList</page>
@@ -22,6 +30,14 @@
 			<title language="de-informal">Pakete</title>
 			<title language="en">Packages</title>
 		</item>
+		<item identifier="de.mysterycode.translate.PackageAdd">
+			<parent>de.mysterycode.translate.PackageList</parent>
+			<page>de.mysterycode.translate.PackageAdd</page>
+			<title language="de">Paket hinzufügen</title>
+			<title language="de-informal">Paket hinzufügen</title>
+			<title language="en">Add Package</title>
+		</item>
+		
 		<item identifier="de.mysterycode.translate.LanguageItemList">
 			<menu>com.woltlab.wcf.MainMenu</menu>
 			<page>de.mysterycode.translate.LanguageItemList</page>
@@ -29,8 +45,18 @@
 			<title language="de-informal">Sprachvariablen</title>
 			<title language="en">Language Items</title>
 		</item>
-		<item identifier="de.mysterycode.translate.LanguageItemCheck">
+		
+		<item identifier="de.mysterycode.translate.TranslationStart">
 			<menu>com.woltlab.wcf.MainMenu</menu>
+			<page>de.mysterycode.translate.TranslationStartpage</page>
+			<title language="de">Übersetzung</title>
+			<title language="de-informal">Übersetzung</title>
+			<title language="en">Translation</title>
+		</item>
+		
+		<item identifier="de.mysterycode.translate.LanguageItemCheck">
+			<!-- <menu>com.woltlab.wcf.MainMenu</menu> -->
+			<parent>de.mysterycode.translate.TranslationStart</parent>
 			<page>de.mysterycode.translate.LanguageItemCheck</page>
 			<title language="de">Sprachvariablenprüfung</title>
 			<title language="de-informal">Sprachvariablenprüfung</title>
