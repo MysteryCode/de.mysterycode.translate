@@ -201,6 +201,8 @@
 			<name language="en">Language Items Check</name>
 			<options>translate_enable</options>
 			<permissions>user.translate.language.item.canCheck</permissions>
+			<parent>de.mysterycode.translate.TranslationStart</parent>
+			<hasFixedParent>1</hasFixedParent>
 			
 			<content language="en">
 				<title>Language Items Check</title>
