@@ -8,14 +8,8 @@ use wcf\system\exception\PermissionDeniedException;
 use wcf\system\WCF;
 
 class PackageEditForm extends PackageAddForm {
-	
 	/**
 	 * @see \wcf\acp\form\AbstractForm::$neededPermissions
-	 */
-	public $neededPermissions = [];
-	
-	/**
-	 * @inheritDoc
 	 */
 	public $neededPermissions = [];
 	
