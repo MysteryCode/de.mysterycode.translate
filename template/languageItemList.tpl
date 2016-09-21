@@ -29,7 +29,7 @@
 					<th class="columnTitle columnLanguageItemName{if $sortField == 'languageItemName'} active {@$sortOrder}{/if}"><a href="{link controller='LanguageItemList' application='translate'}pageNo={@$pageNo}&sortField=languageItemName&sortOrder={if $sortField == 'languageItemName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{if $packageID}&packageID={$packageID}{/if}{if $languageID}&languageID={$languageID}{/if}{/link}">{lang}wcf.global.name{/lang}</a></th>
 					
 					{foreach from=$availableLanguages item=language}
-						{if !$languageID || $languageID = $language->languageID}
+						{if !$languageID || $languageID == $language->languageID}
 							<th class="columnIcon columnStatus">{@$language->getIconTag()}</th>
 						{/if}
 					{/foreach}
@@ -53,11 +53,14 @@
 							<small>{$languageItem->getCategory()->languageCategory}</small>
 						</td>
 						
-						{foreach from=$languageItem->getTranslationStatus() item=$status}
-							{if !$languageID || $languageID = $language->languageID}
+						{if !$languageID}
+							{foreach from=$languageItem->getTranslationStatus() item=$status}
 								<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{else}question{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/lang}"></span></td>
-							{/if}
-						{/foreach}
+							{/foreach}
+						{else}
+							{assign var=status value=$languageItem->getTranslationStatus($languageID)}
+							<td class="columnIcon columnStatus"><span class="icon icon16 fa-{if $status == -1}times{else if $status == 0}refresh{else if $status == 1}check{else}question{/if} jsTooltip" title="{lang}translate.language.variable.status.{if $status == -1}untranslated{else if $status == 0}unconfirmed{else if $status == 1}confirmed{else}error{/if}{/lang}"></span></td>
+						{/if}
 						
 						{event name='columns'}
 					</tr>
