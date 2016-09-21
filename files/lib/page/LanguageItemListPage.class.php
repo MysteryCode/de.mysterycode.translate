@@ -49,7 +49,7 @@ class LanguageItemListPage extends SortablePage {
 				throw new IllegalLinkException();
 		}
 		
-		if (!empty($_REQUEST['languageID'])){
+		if (!empty($_REQUEST['languageID'])) {
 			$this->languageID = intval($_REQUEST['languageID']);
 			$language = LanguageCache::getInstance()->getLanguage($this->languageID);
 			if ($language === null)

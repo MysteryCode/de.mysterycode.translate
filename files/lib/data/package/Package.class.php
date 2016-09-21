@@ -2,8 +2,8 @@
 
 namespace translate\data\package;
 use translate\data\package\version\PackageVersionList;
-use wcf\data\DatabaseObject;
 use wcf\data\package\Package as WCFPackage;
+use wcf\data\DatabaseObject;
 use wcf\system\request\IRouteController;
 use wcf\system\request\LinkHandler;
 use wcf\system\WCF;

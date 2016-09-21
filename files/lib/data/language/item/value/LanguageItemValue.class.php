@@ -1,11 +1,10 @@
 <?php
 
 namespace translate\data\language\item\value;
+use translate\data\language\item\LanguageItemCache;
+use translate\data\language\LanguageCache;
 use wcf\data\DatabaseObject;
 use wcf\system\WCF;
-use translate\data\language\LanguageCache;
-use translate\data\language\item\LanguageItemCache;
-use translate\data\package\PackageCache;
 
 /**
  * @property-read	integer		$languageItemValueID		unique id of the translation
