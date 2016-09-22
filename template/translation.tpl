@@ -25,26 +25,26 @@
 	
 	{if $package->description}
 		<dl>
-			<dt>{lang}translate.package.description{/lang}
+			<dt>{lang}translate.package.description{/lang}</dt>
 			<dd>{$package->description}</dd>
 		</dl>
 	{/if}
 	{if $package->author}
 		<dl>
-			<dt>{lang}translate.package.author{/lang}
+			<dt>{lang}translate.package.author{/lang}</dt>
 			<dd>{$package->author}</dd>
 		</dl>
 	{/if}
 	<dl>
-		<dt>{lang}translate.translate.target{/lang}
+		<dt>{lang}translate.translate.target{/lang}</dt>
 		<dd>{@$language->getIconTag()} {$language->getTitle()}</dd>
 	</dl>
 	<dl>
-		<dt>{lang}translate.language.variables{/lang}
+		<dt>{lang}translate.language.variables{/lang}</dt>
 		<dd>{#$package->variables}</dd>
 	</dl>
 	<dl>
-		<dt>{lang}translate.translate.variables.current{/lang}
+		<dt>{lang}translate.translate.variables.current{/lang}</dt>
 		<dd>{#$items}</dd>
 	</dl>
 </div>
