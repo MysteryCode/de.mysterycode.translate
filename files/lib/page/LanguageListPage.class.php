@@ -1,10 +1,10 @@
 <?php
 
 namespace translate\page;
+use translate\data\language\LanguageCache;
 use translate\data\language\LanguageList;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
-use translate\data\language\LanguageCache;
 
 class LanguageListPage extends SortablePage {
 	/**
