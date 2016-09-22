@@ -1,6 +1,6 @@
 .jsTranslationRow {
 	&:not(:last-child) td {
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid #000 !important;
 	}
 	.columnButton {
 		text-align: right !important;
