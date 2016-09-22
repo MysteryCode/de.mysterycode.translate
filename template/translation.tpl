@@ -26,7 +26,7 @@
 			<thead>
 				<tr>
 					<th class="columnText columnOrigin">{lang}translate.translate.origin{/lang}</th>
-					<th class="columnText columnOrigin columnOriginSecondary">{lang}translate.translate.origin.secondary{/lang}</th>
+					{if $__wcf->user->getUserOption('originLanguageSecondary')}<th class="columnText columnOrigin columnOriginSecondary">{lang}translate.translate.origin.secondary{/lang}</th>{/if}
 					<th class="columnText columnTranslation">{lang}translate.translate.translation{/lang}</th>
 					<th class="columnText columnButton"></th>
 					
@@ -43,14 +43,19 @@
 					<tr>
 					<tr class="jsTranslationRow">
 						<td class="columnText columnOrigin">
-							<textarea rows="5" readonly>{$languageItem->getSourceValue()}</textarea>
-						</td>
-						<td class="columnText columnOrigin columnOriginSecondary">
-							{assign var=secondarySourceValue value=$languageItem->getSourceValue(true)}
-							{if $secondarySourceValue}
-								<textarea rows="5" readonly>{$secondarySourceValue}</textarea>
+							{assign var=sourceValue value=$languageItem->getSourceValue()}
+							{if $sourceValue}
+								<textarea rows="5" readonly>{$sourceValue}</textarea>
 							{/if}
 						</td>
+						{if $__wcf->user->getUserOption('originLanguageSecondary')}
+							<td class="columnText columnOrigin columnOriginSecondary">
+								{assign var=secondarySourceValue value=$languageItem->getSourceValue(true)}
+								{if $secondarySourceValue}
+									<textarea rows="5" readonly>{$secondarySourceValue}</textarea>
+								{/if}
+							</td>
+						{/if}
 						<td class="columnText columnTranslation">
 							<textarea rows="5" id="languageItemTranslation{$languageItem->languageItemID}" class="jsTranslation">{$languageItem->languageItemValueSecondary}</textarea>
 						</td>
