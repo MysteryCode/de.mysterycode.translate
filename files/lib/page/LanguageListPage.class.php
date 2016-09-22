@@ -4,6 +4,7 @@ namespace translate\page;
 use translate\data\language\LanguageList;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
+use translate\data\language\LanguageCache;
 
 class LanguageListPage extends SortablePage {
 	/**
@@ -47,10 +48,7 @@ class LanguageListPage extends SortablePage {
 		}
 		
 		if (WCF::getUser()->userID) {
-			$excludedLanguages = WCF::getUser()->getUserOption('translateExcludedLanguages');
-			if (!empty($excludedLanguages)) {
-				$this->objectList->getConditionBuilder()->add('languageCode NOT IN (?)', [ $excludedLanguages ]);
-			}
+			$this->objectList->getConditionBuilder()->add('languageID IN (?)', [ LanguageCache::getInstance()->getAccessibleLanguageIDs() ]);
 		}
 	}
 	
