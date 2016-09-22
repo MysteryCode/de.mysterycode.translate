@@ -1,4 +1,4 @@
-{capture assign='canonicalURLParameters'}languageID={$sourceLanguage->languageID}&packageID={$package->packageID}{/capture}
+{capture assign='canonicalURLParameters'}languageID={$targetLanguage->languageID}&packageID={$package->packageID}{/capture}
 
 {capture assign='headContent'}
 	{if $pageNo < $pages}
@@ -37,7 +37,7 @@
 	{/if}
 	<dl>
 		<dt>{lang}translate.translate.target{/lang}</dt>
-		<dd>{@$language->getIconTag()} {$language->getTitle()}</dd>
+		<dd>{@$targetLanguage->getIconTag()} {$language->getTitle()}</dd>
 	</dl>
 	<dl>
 		<dt>{lang}translate.language.variables{/lang}</dt>
