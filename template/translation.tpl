@@ -20,7 +20,7 @@
 	</div>
 {/hascontent}
 
-<div class="section">
+<div class="section htmlContent">
 	<h2 class="sectionHeadline">{$package->getTitle()}</h2>
 	
 	{if $package->description}
