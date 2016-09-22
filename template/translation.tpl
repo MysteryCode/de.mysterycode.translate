@@ -20,6 +20,35 @@
 	</div>
 {/hascontent}
 
+<div class="section">
+	<h2 class="sectionHeadline">{$package->getTitle()}</h2>
+	
+	{if $package->description}
+		<dl>
+			<dt>{lang}translate.package.description{/lang}
+			<dd>{$package->description}</dd>
+		</dl>
+	{/if}
+	{if $package->author}
+		<dl>
+			<dt>{lang}translate.package.author{/lang}
+			<dd>{$package->author}</dd>
+		</dl>
+	{/if}
+	<dl>
+		<dt>{lang}translate.translate.target{/lang}
+		<dd>{@$language->getIconTag()} {$language->getTitle()}</dd>
+	</dl>
+	<dl>
+		<dt>{lang}translate.language.variables{/lang}
+		<dd>{#$package->variables}</dd>
+	</dl>
+	<dl>
+		<dt>{lang}translate.translate.variables.current{/lang}
+		<dd>{#$items}</dd>
+	</dl>
+</div>
+
 {if $items}
 	<div class="section tabularBox">
 		<table class="table">
