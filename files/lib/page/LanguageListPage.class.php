@@ -44,11 +44,11 @@ class LanguageListPage extends SortablePage {
 		parent::initObjectList();
 		
 		if (!empty($this->countryCode)) {
-			$this->objectList->getConditionBuilder()->add('countryCode = ?', [ $this->countryCode ]);
+			$this->objectList->getConditionBuilder()->add('language.countryCode = ?', [ $this->countryCode ]);
 		}
 		
 		if (WCF::getUser()->userID) {
-			$this->objectList->getConditionBuilder()->add('languageID IN (?)', [ LanguageCache::getInstance()->getAccessibleLanguageIDs() ]);
+			$this->objectList->getConditionBuilder()->add('language.languageID IN (?)', [ LanguageCache::getInstance()->getAccessibleLanguageIDs() ]);
 		}
 	}
 	
