@@ -10,7 +10,7 @@ class LanguageListPage extends SortablePage {
 	/**
 	 * @see \wcf\page\SortablePage::$defaultSortField
 	 */
-	public $defaultSortField = 'countryCode';
+	public $defaultSortField = 'i18nlanguageName';
 	
 	/**
 	 * @see \wcf\page\SortablePage::$validSortFields
