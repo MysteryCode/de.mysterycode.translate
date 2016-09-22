@@ -37,7 +37,7 @@
 	{/if}
 	<dl>
 		<dt>{lang}translate.translate.target{/lang}</dt>
-		<dd>{@$targetLanguage->getIconTag()} {$language->getTitle()}</dd>
+		<dd>{@$targetLanguage->getIconTag()} {$targetLanguage->getTitle()}</dd>
 	</dl>
 	<dl>
 		<dt>{lang}translate.language.variables{/lang}</dt>
