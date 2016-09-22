@@ -70,7 +70,7 @@
 							{event name='rowButtons'}
 						</td>
 						<td class="columnID columnLanguageID">{@$language->languageID}</td>
-						<td class="columnTitle columnLanguageName"><a href="{$language->getLink()}">{$language->getTitle()} <small>({@$language->languageCode})</small></a></td>
+						<td class="columnTitle columnLanguageName">{@$language->getIconTag()} <a href="{$language->getLink()}">{$language->getTitle()} <small>({@$language->languageCode})</small></a></td>
 						<td class="columnDigits columnVariables">
 							{if $language->variables}
 								<a href="{link controller='LanguageItemList' application='translate'}languageID={$language->languageID}{/link}">{#$language->variables}</a>
