@@ -1,5 +1,5 @@
 .jsTranslationRow {
-	&:not(:last-child) {
+	&:not(:last-child) td {
 		border-bottom: 1px solid #000;
 	}
 	.columnButton {
