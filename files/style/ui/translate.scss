@@ -1,1 +1,8 @@
-// empty
+.jsTranslationRow {
+	&:not(:last-child) {
+		border-bottom: 1px solid #000;
+	}
+	.columnButton {
+		text-align: right;
+	}
+}

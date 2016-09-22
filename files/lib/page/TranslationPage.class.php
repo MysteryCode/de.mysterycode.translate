@@ -99,8 +99,6 @@ class TranslationPage extends SortablePage {
 	 * @inheritDoc
 	 */
 	public function readData() {
-		parent::readData();
-		
 		if (WCF::getUser()->getUserOption('originLanguage'))
 			$this->sourceLanguage = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguage'));
 		else
@@ -108,6 +106,8 @@ class TranslationPage extends SortablePage {
 		
 		if (WCF::getUser()->getUserOption('originLanguageSecondary'))
 			$this->secondarySourceLanguage = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguageSecondary'));
+		
+		parent::readData();
 	}
 	
 	/**
@@ -124,7 +124,7 @@ class TranslationPage extends SortablePage {
 			FROM	translate' . WCF_N . '_language_item_value language_item_value
 			WHERE	language_item_value.languageID IN (?)
 				AND language_item_value.languageItemID = language_item.languageItemID
-		)', [ $this->sourceLanguage->languageID, (($this->secondarySourceLanguage !== null) ? $this->secondarySourceLanguage->languageID : 0) ]);
+		)', [ [ $this->sourceLanguage->languageID, (($this->secondarySourceLanguage !== null) ? $this->secondarySourceLanguage->languageID : 0) ] ]);
 		
 		// don't get already translated items
 		$this->objectList->getConditionBuilder()->add('language_item.languageItemID NOT IN (

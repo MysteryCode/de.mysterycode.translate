@@ -160,19 +160,19 @@ class LanguageItem extends DatabaseObject implements IRouteController {
 	 */
 	public function getSourceValue($secondary = false) {
 		if (!$secondary)
-			$languageID = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguage'));
+			$languageID = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguage'))->languageID;
 		else if (WCF::getUser()->getUserOption('originLanguageSecondary'))
-			$languageID = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguageSecondary'));
+			$languageID = LanguageCache::getInstance()->getLanguageByCode(WCF::getUser()->getUserOption('originLanguageSecondary'))->languageID;
 		else
 			$languageID = 0;
 		
-		$sql = "SELECT language_item_value.value
+		$sql = "SELECT language_item_value.languageItemValue
 			FROM " . LanguageItemValue::getDatabaseTableName() . " language_item_value
 			WHERE language_item_value.languageID = ?
 				AND language_item_value.languageItemID = ?";
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute([ $languageID, $this->languageItemID ]);
 		
-		return $statement->fetchSingleRow();
+		return $statement->fetchSingleRow(\PDO::FETCH_COLUMN);
 	}
 }

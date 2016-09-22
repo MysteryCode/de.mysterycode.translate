@@ -1,4 +1,4 @@
-{capture assign='canonicalURLParameters'}languageID={$languageID}&packageID={$packageID}{/capture}
+{capture assign='canonicalURLParameters'}languageID={$sourceLanguage->languageID}&packageID={$package->packageID}{/capture}
 
 {capture assign='headContent'}
 	{if $pageNo < $pages}
@@ -28,7 +28,7 @@
 					<th class="columnText columnOrigin">{lang}translate.translate.origin{/lang}</th>
 					<th class="columnText columnOrigin columnOriginSecondary">{lang}translate.translate.origin.secondary{/lang}</th>
 					<th class="columnText columnTranslation">{lang}translate.translate.translation{/lang}</th>
-					<th class="columnText columnsButton"></th>
+					<th class="columnText columnButton"></th>
 					
 					{event name='columnHeads'}
 				</tr>
@@ -36,6 +36,11 @@
 			
 			<tbody>
 				{foreach from=$objects item=languageItem}
+					<tr class="languageItemName">
+						<td colspan="4">
+							<span class="inlineCode">{$languageItem->languageItem}</span>
+						</td>
+					<tr>
 					<tr class="jsTranslationRow">
 						<td class="columnText columnOrigin">
 							<textarea rows="5" readonly>{$languageItem->getSourceValue()}</textarea>
@@ -49,7 +54,7 @@
 						<td class="columnText columnTranslation">
 							<textarea rows="5" id="languageItemTranslation{$languageItem->languageItemID}" class="jsTranslation">{$languageItem->languageItemValueSecondary}</textarea>
 						</td>
-						<td class="columnText columnsButton">
+						<td class="columnText columnButton">
 							<span class="button disabled jsSubmitTranslation">{lang}wcf.global.submit{/lang}</span>
 						</td>
 					</tr>
