@@ -9,4 +9,3 @@ class LanguageItemCheckPage extends AbstractPage {
 	 */
 	public $neededPermissions = [ 'user.translate.language.item.canCheck' ];
 }
-                                                    
